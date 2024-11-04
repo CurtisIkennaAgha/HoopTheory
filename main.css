@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+body
+{
+  background-color: #000000;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #b2b2b2;
+}
+
+.active {
+  background-color: rgba(214, 214, 214, 0.933);
+  color: #000000;
+}
+
+nav {
+  color: #000000;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  object-fit: scale-down;
+}
+
+.logo img{ 
+  padding: 0px 20px;
+  width: 50px; 
+  height: auto; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  
+.logo {
+    display: none;
+}
+
+nav {
+    position: fixed; /* Keep the nav at the bottom on mobile */
+    left: 0;
+    bottom: 0; /* Center the items horizontally */
+    align-items: center;
+    width: 100%; /* Ensure it takes full width */
+    z-index: 1000; /* Keep it above other content */
+    border-top: 2px solid rgb(255, 162, 0);
+    box-shadow: 0 -2px 100px rgba(255, 157, 0, 0.703);
+    justify-content: center;
+}
+}
