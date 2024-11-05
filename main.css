@@ -6,13 +6,15 @@ body {
   font-family: "Alegreya Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
-  margin: 0px;
+  margin: 0;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   min-height: 500vh;
-  
-  
+}
+
+.content{
+  padding:30px;
 }
 
 #preloader {
@@ -29,6 +31,65 @@ body {
   opacity: 1; /* Start fully visible */
   transition: opacity 1s ease; /* Transition for fading out */
 }
+
+.container { 
+  padding-left: 20px; /* Consider adjusting if needed */
+  padding-top: 5px;   /* Consider adjusting if needed */
+  padding-right: 20px; /* Add right padding to match left */
+  padding-bottom: 40px; /* Add bottom padding to match top */
+  width: auto; 
+  height: auto; 
+  border-radius: 15px; 
+  background-color: rgb(52, 52, 52); 
+  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.529); 
+  margin: 10px; 
+  font-family: "PT Serif", serif; 
+  font-weight: 700; 
+  font-style: italic; 
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+.secondarycontainer {
+  display: flex;
+  grid-template-columns: 1fr 3fr;
+  font-size: 15px;
+  column-gap: 2px;
+  justify-content: center;
+}
+
+.container .drill { 
+  max-width: 100%; /* Image will not exceed the width of the container */
+  max-height: 100%; /* Image will not exceed the height of the container */
+  width: auto; 
+  height: auto; 
+  border-radius: 15px; 
+  background-color: rgb(52, 52, 52); 
+  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.529); 
+  margin: 0; /* Remove margin to prevent overflow */
+  font-family: "PT Serif", serif; 
+  font-weight: 700; 
+  font-style: italic; 
+  box-sizing: border-box; /* Include padding and border in width/height */
+  overflow: hidden;
+}
+
+.container h1 {
+  display: inline-block; /* Allows the h1 to sit next to other inline-block elements */
+  margin-right: 10px; /* Adds some space between the h1 and the logo */
+}
+
+.container .logo {
+  all: unset; /* Reset styles */
+  width: 50px; /* Set the desired width */
+  height: auto; 
+  border-radius: 0; 
+  padding-right: 20px;
+  padding-left: 0px;
+  margin: 0; 
+  box-shadow: none; 
+  display: inline-block; /* Make the logo inline-block */
+}
+
 
 #preloader img{
   width: 80%;
@@ -76,7 +137,7 @@ header {
   justify-content: space-between;
   align-items: center;
   object-fit: scale-down;
-  box-shadow: 0 -2px 100px rgba(255, 157, 0, 0.703);
+  box-shadow: 0 -2px 50px rgba(255, 157, 0, 0.703);
   margin-bottom:10px;
 }
 
@@ -138,3 +199,8 @@ height: auto;
 }
 
 }
+
+@media (min-width: 768px) {
+  footer{
+    display: none;
+  }
