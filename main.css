@@ -53,24 +53,22 @@ body {
   display: flex;
   grid-template-columns: 1fr 3fr;
   font-size: 15px;
-  column-gap: 2px;
-  justify-content: center;
+  column-gap: 2px
 }
 
-.container .drill { 
-  max-width: 100%; /* Image will not exceed the width of the container */
-  max-height: 100%; /* Image will not exceed the height of the container */
-  width: auto; 
+.container img { 
+  
+  width: 100%; 
   height: auto; 
-  border-radius: 15px; 
-  background-color: rgb(52, 52, 52); 
-  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.529); 
+  border-radius: 15px;
+  object-fit: contain;
   margin: 0; /* Remove margin to prevent overflow */
   font-family: "PT Serif", serif; 
   font-weight: 700; 
   font-style: italic; 
   box-sizing: border-box; /* Include padding and border in width/height */
   overflow: hidden;
+
 }
 
 .container h1 {
