@@ -46,6 +46,8 @@ body {
   font-weight: 700; 
   font-style: italic; 
   box-sizing: border-box; /* Include padding and border in width/height */
+  font-size: 2vw;
+
 }
 
 .secondarycontainer {
