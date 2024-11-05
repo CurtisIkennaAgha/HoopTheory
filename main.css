@@ -51,7 +51,7 @@ body {
 .secondarycontainer {
   display: flex;
   grid-template-columns: 1fr 3fr;
-  font-size: 2.5vw;
+  font-size: 2vw;
   column-gap: 2px
 }
 
