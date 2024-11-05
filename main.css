@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
-body
-{
+body {
+
   background-color: #000000;
   font-family: "Alegreya Sans", sans-serif;
   font-weight: 300;
@@ -10,7 +10,9 @@ body
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 500vh;
+  
+  
 }
 
 ul {
@@ -18,7 +20,10 @@ ul {
   margin: 0;
   overflow: hidden;
 }
-
+img{
+  width: auto;
+  height:30px;
+}
 li a {
   display: block;
   color: rgb(0, 0, 0);
@@ -36,13 +41,16 @@ li a:hover:not(.active) {
   color: #000000;
 }
 
-nav {
+header {
+  position:sticky;
   color: #000000;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   object-fit: scale-down;
+  box-shadow: 0 -2px 100px rgba(255, 157, 0, 0.703);
+  margin-bottom:10px;
 }
 
 .logo img{ 
@@ -59,19 +67,23 @@ nav {
 
 @media (max-width: 768px) {
   
-.logo {
+header {
     display: none;
 }
 
-nav {
-    position: fixed; /* Keep the nav at the bottom on mobile */
-    left: 0;
-    bottom: 0; /* Center the items horizontally */
-    align-items: center;
-    width: 100%; /* Ensure it takes full width */
-    z-index: 1000; /* Keep it above other content */
-    border-top: 2px solid rgb(255, 162, 0);
-    box-shadow: 0 -2px 100px rgba(255, 157, 0, 0.703);
-    justify-content: center;
+footer{
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -2px 100px rgba(255, 157, 0, 0.703);
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 0; /* Remove any extra padding */
+  margin: 0; /* Remove any extra margin */
 }
+
 }
