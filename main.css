@@ -84,14 +84,30 @@ footer{
   padding: 0%;
   margin: 0%;
   display: flex;
+  overflow: hidden;
+
 
 }
-ul{
-  justify-content: center;
-  align-items: center;
-  padding: 0%;
-  margin: 0%;
-  display: flex;
+footer .content {
+  text-align: center; /* Centers text/content inside the footer */
+  margin: 0; /* Removes any additional margin */
+  padding: 0; /* Ensures no padding that could offset content */
+}
+ul.nav-links {
+list-style: none; /* Remove default list styling */
+display: flex; /* Display list items in a row */
+justify-content: center; /* Center the list items horizontally */
+padding: 0; /* Remove any default padding */
+margin: 0; /* Remove any default margin */
+}
+
+ul.nav-links li {
+margin: 0 0px; /* Add space between the list items */
+}
+
+ul.nav-links li a img {
+width: 40px; /* Adjust image size as needed */
+height: auto;
 }
 
 }
