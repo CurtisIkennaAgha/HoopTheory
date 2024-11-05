@@ -50,26 +50,27 @@ body {
 
 }
 
-.secondarycontainer h1::before  {
-    content: "";
-    display: inline-block;
-    width:25px;
-    aspect-ratio: 1 / 1;
-    padding-bottom: 10%;
-    background:url("ball.png") no-repeat center center;
-    background-size:contain;
-    margin-right: 2px;
-    vertical-align: middle;
-    margin-bottom: 0; /* Prevent margin below the image */
-  
-  }
-  .secondarycontainer h1 {
-    display: inline-block;
-    vertical-align: middle; /* Align the text with the image */
-    margin: 0; /* Remove any default margin from the h1 */
-    padding: 0; /* Remove padding if any */
-    line-height: 1; /* Prevent extra space due to line height */
-  }
+.secondarycontainer h1::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  aspect-ratio: 1 / 1;
+  padding-bottom: 10%; /* Maintain the aspect ratio and add extra space */
+  background: url("ball.png") no-repeat center center;
+  background-size: contain;
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-bottom: 0;
+}
+
+.secondarycontainer h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  line-height: 25px; /* Match the height of the image */
+  vertical-align: middle; /* Align text in the middle relative to the image */
+}
+
   
   .secondarycontainer {
     margin: 0; /* Reset any margins in the container */
