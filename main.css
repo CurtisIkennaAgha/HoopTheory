@@ -36,12 +36,11 @@ body {
   padding-left: 20px; /* Consider adjusting if needed */
   padding-top: 5px;   /* Consider adjusting if needed */
   padding-right: 20px; /* Add right padding to match left */
-  padding-bottom: 40px; /* Add bottom padding to match top */
+  padding-bottom: 20px; /* Add bottom padding to match top */
   width: auto; 
   height: auto; 
-  border-radius: 15px; 
+  border-radius: 5px; 
   background-color: rgb(52, 52, 52); 
-  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.529); 
   margin: 10px; 
   font-family: "PT Serif", serif; 
   font-weight: 700; 
@@ -52,7 +51,7 @@ body {
 .secondarycontainer {
   display: flex;
   grid-template-columns: 1fr 3fr;
-  font-size: 15px;
+  font-size: 2.5vw;
   column-gap: 2px
 }
 
@@ -60,12 +59,12 @@ body {
   
   width: 100%; 
   height: auto; 
-  border-radius: 15px;
+  border-radius: 10px;
   object-fit: contain;
   margin: 0; /* Remove margin to prevent overflow */
   font-family: "PT Serif", serif; 
-  font-weight: 700; 
-  font-style: italic; 
+  font-weight: 700;  
+  font-style: normal;
   box-sizing: border-box; /* Include padding and border in width/height */
   overflow: hidden;
 
