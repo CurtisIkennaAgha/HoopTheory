@@ -36,21 +36,22 @@ body {
   padding-left: 20px; /* Consider adjusting if needed */
   padding-top: 5px;   /* Consider adjusting if needed */
   padding-right: 20px; /* Add right padding to match left */
-  padding-bottom: 20px; /* Add bottom padding to match top */
+  padding-bottom: 5px; /* Add bottom padding to match top */
   width: auto; 
   height: auto; 
   border-radius: 5px; 
   background-color: rgb(52, 52, 52); 
   margin: 10px; 
-  font-family: "PT Serif", serif; 
-  font-weight: 700; 
-  font-style: italic; 
   box-sizing: border-box; /* Include padding and border in width/height */
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 2vw;
-
 }
 
 .secondarycontainer h1::before {
+  margin-top: 0; /* Remove any margin above the heading */
+  margin-bottom: 0; /* Optional, to reduce gap below the heading */
   content: "";
   display: inline-block;
   width: 25px;
@@ -61,9 +62,14 @@ body {
   margin-right: 2px;
   vertical-align: middle;
   margin-bottom: 0;
+  font-size: 2vw;
+
 }
 
 .secondarycontainer h1 {
+  font-family: "PT Serif", serif; 
+  font-weight: 700; 
+  font-style: italic; 
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -72,27 +78,36 @@ body {
 }
 
   
-  .secondarycontainer {
-    margin: 0; /* Reset any margins in the container */
-    padding: 0; /* Reset padding */
-  }
-
-
-.container img { 
-  
-  width: 100%; 
-  height: auto; 
-  border-radius: 10px;
-  object-fit: contain;
-  margin: 0; /* Remove margin to prevent overflow */
+.container p {
+  margin-top: 8px;  /* Remove space above the paragraph */
+  margin-bottom: 0; 
+  font-size: 20px;
+  opacity: 0.8;
+  padding-top: 0px;
+  margin-bottom: 0; /* Remove space at the bottom */
   font-family: "PT Serif", serif; 
-  font-weight: 700;  
-  font-style: normal;
-  box-sizing: border-box; /* Include padding and border in width/height */
-  overflow: hidden;
-
+  font-weight: 700; 
+  font-style: italic; 
+  line-height: normal; /
 }
 
+
+
+  .container img {
+    margin-top: 0;  /* Remove space above the paragraph */
+    margin-bottom: 0; 
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    margin: 0px;
+    padding: 0px;
+    display: block; /* Remove space below image */
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+    box-sizing: border-box;
+  }
 
 #preloader img{
   width: 80%;
