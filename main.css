@@ -157,15 +157,15 @@ body {
   
   .plus-icon {
     position: relative;
-    width: 20px; /* Width of the plus sign */
-    height: 20px;
+    width: 26px; /* Width of the plus sign */
+    height: 26px;
   }
   
   .plus-icon::before,
   .plus-icon::after {
     content: "";
     position: absolute;
-    background-color: rgb(31, 30, 30);
+    background-color: rgb(255, 255, 255);
     border-radius: 2px; /* Rounded edges for a more refined look */
   }
   
