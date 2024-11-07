@@ -3,121 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoop Theory</title>
-  <link rel="stylesheet" type="text/css" href="main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-<script>
-window.addEventListener("load", function() {
-  const preloaderDuration = 500; // Duration of preloader visibility
-  const preloader = document.getElementById('preloader');
-  const header = document.querySelector('header');
-  const navbar = document.querySelector('footer');
-  const content = document.querySelector('.content');
-
-  // Initially set opacity to 0 for header, navbar, and content to make them invisible
-  header.style.opacity = '0';
-  navbar.style.opacity = '0';
-  content.style.opacity = '0';
-
-  // Show the preloader for the specified duration
-  setTimeout(function() {
-    preloader.style.opacity = '0'; // Start fading out the preloader
-
-    // After fade-out completes, hide the preloader and reveal the header, navbar, and content
-    setTimeout(function() {
-      preloader.style.display = 'none'; // Hide the preloader
-
-      // Use opacity transition to fade in header, navbar, and content
-      header.style.display = 'flex';   // Set to flex to match the layout
-      navbar.style.display = 'flex';   // Make sure navbar is set to flex (or block if needed)
-      content.style.display = 'block'; // Content is set to block or flex as needed
-
-      // Trigger the fade-in effect by adding transition
-      setTimeout(function() {
-        header.style.transition = 'opacity 1s ease';
-        navbar.style.transition = 'opacity 1s ease';
-        content.style.transition = 'opacity 1s ease';
-
-        header.style.opacity = '1';
-        navbar.style.opacity = '1';
-        
-        // Delay the content fade-in by 0.5 seconds
-        setTimeout(function() {
-          content.style.opacity = '1';
-        }, 500); // Delay content fade-in by half a second (500ms)
-      }, 100); // Delay before applying transition
-    }, 1000); // Match this time with the fade-out duration
-  }, preloaderDuration); // Show the preloader for the specified duration
-});
-window.onscroll = function() {
-  shrinkHeader();
-};
-
-window.onscroll = function() {
-  shrinkHeader();
-};
-
-function shrinkHeader() {
-  const header = document.querySelector('header');
-  
-  // Once you've scrolled past 100px, shrink the header
-  if (window.scrollY > 100) {
-    header.classList.add('shrink'); // Add the shrink class
-  } else {
-    header.classList.remove('shrink'); // Remove the shrink class
-  }
-}
-
-
-  </script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <div id="preloader">
-    <div class="intro-content">
-      <img src="LOGO.png" alt="Logo" class="logo">
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form action="#">
+        <input type="text" id='inUsr' placeholder="Enter your email">
+        <input type="password" id="inPass" placeholder="Enter your password">
+        <span class="signup">
+          <a href="#" id="forgotLabel">Forgot password?</a>
+        </span>
+        <input type="button" class="button loginbtn" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <a href="#" id="signupLabel">Signup</a>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Signup</header>
+      <form action="#">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id='username' placeholder="Enter your username">
+        <input type="text" id='email' placeholder="Enter your email">
+        <input type="password" id='password' placeholder="Create a password">
+        <input type="button" class="button signupbtn" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <a href="#" id="loginLabel">Login</a>
+        </span>
+      </div>
+    </div>
+    <div class="forgot form" >
+      <header>Forgot Password</header>
+      <form action="#">
+        <input type="text" id='forgotinp' placeholder="Enter your email">
+        <input type="button" class="button forgotbtn" value="Submit">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <a href="#" id="signupLabel">Signup</a>
+        </span>
+      </div>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <a href="#" id="loginLabel">Login</a>
+        </span>
+      </div>
     </div>
   </div>
-
-  <header>
-    <div class="hlogo"><img src="hlogo.png" alt=""></div>
-  </header>
-    
-    <div class="content">
-      <div class = "pretext"></div>
-      <div class="container">
-        <div class ="drill-container">
-          <div class = "drill"><img src = "drill.gif"></img></div>
-          <div class="overlay-text">Drill Name</div>
-          <button class="add-drill"><div class="plus-icon"><img src = "plus.png"></div></button>
-        </div>
-      </div>
-      <div class = "pretext"></div>
-      <div class="socials-container">
-        <ul class="socials-links">
-          <li><a href="#"><img src = "insta.png"></img></a></li>
-          <li><a href="#"><img src = "tiktok.png"></img></a></li>
-          <li><a href="#"><img src = "facebook.png"></img></a></li>
-        </ul>
-      </div>
-
-    </div>
-    <footer>
-      <ul class="nav-links">
-        <li class="active"><a href="#"><img src = "home.png"></img></a></li>
-        <li><a href="#"><img src = "drills.png"></img></a></li>
-        <li><a href="#"><img src = "booking.png"></img></a></li>
-        <li><a href="#"> <img src = "profile.png"></img></a></li>
-      </ul>
-    </footer>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="page0.js" type="module"></script>
 </body>
 </html>
