@@ -34,9 +34,9 @@ body {
 
 .container { 
   padding-left: 20px; /* Consider adjusting if needed */
-  padding-top: 5px;   /* Consider adjusting if needed */
+  padding-top: 15px;   /* Consider adjusting if needed */
   padding-right: 20px; /* Add right padding to match left */
-  padding-bottom: 5px; /* Add bottom padding to match top */
+  padding-bottom: 15px; /* Add bottom padding to match top */
   width: auto; 
   height: auto; 
   border-radius: 5px; 
@@ -47,6 +47,7 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: 2vw;
+  overflow: hidden;
 }
 
 .secondarycontainer h1::before {
@@ -94,6 +95,7 @@ body {
 
 
   .container img {
+    filter: blur(5px);
     margin-top: 0;  /* Remove space above the paragraph */
     margin-bottom: 0; 
     width: 100%;
@@ -107,7 +109,80 @@ body {
     font-weight: 700;
     font-style: normal;
     box-sizing: border-box;
+/* Semi-transparent background */
   }
+
+  .container .drill-container{
+    border-radius:10px ;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color, adjust as needed */
+    font-size: 30px; /* Font size, adjust as needed */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-family: "PT Serif", serif; 
+    font-weight: 700; 
+    font-style: italic;
+  }
+
+  .add-drill {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px; /* Button diameter */
+    height: 50px;
+    border-radius: 50%; /* Makes the button circular */
+    background-color: rgb(52, 52, 52); 
+    color: white;
+    font-size: 30px; /* Adjust size of the plus sign */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
+  .add-drill:hover {
+    background-color: #222222; /* Darker shade for hover effect */
+  }
+  
+  .plus-icon {
+    position: relative;
+    width: 20px; /* Width of the plus sign */
+    height: 20px;
+  }
+  
+  .plus-icon::before,
+  .plus-icon::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    border-radius: 2px; /* Rounded edges for a more refined look */
+  }
+  
+  .plus-icon::before {
+    width: 100%;
+    height: 4px; /* Thickness of the horizontal bar */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .plus-icon::after {
+    width: 4px; /* Thickness of the vertical bar */
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);}
 
 #preloader img{
   width: 80%;
