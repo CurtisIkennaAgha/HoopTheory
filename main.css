@@ -293,6 +293,24 @@ height: auto;
 
 }
 
+.circle-button {
+  width: 40px; /* Smaller circle on mobile */
+  height: 40px;
+}
+
+.plus-icon {
+  width: 16px; /* Smaller plus sign on mobile */
+  height: 16px;
+}
+
+.plus-icon::before {
+  height: 4px; /* Thinner horizontal bar on mobile */
+}
+
+.plus-icon::after {
+  width: 4px; /* Thinner vertical bar on mobile */
+}
+
 @media (min-width: 768px) {
   footer{
     display: none;
