@@ -11,7 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<script>
     // script.js
 window.addEventListener("load", function() {
   const preloaderDuration = 500; // Set how long to show the preloader (in milliseconds)
@@ -42,31 +45,31 @@ window.addEventListener("load", function() {
   </div>
 
     <header>
-      <div class="logo"><img src="LOGO.png" alt=""></div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <div class="hlogo"><img src="hlogo.png" alt=""></div>
     </header>
     
     <div class="content">
+      <div class = "pretext"></div>
       <div class="container">
         <div class ="drill-container">
           <div class = "drill"><img src = "drill.gif"></img></div>
-          <div class="overlay-text">Dill Name</div>
+          <div class="overlay-text">Drill Name</div>
           <button class="add-drill"><div class="plus-icon"><img src = "plus.png"></div></button>
         </div>
       </div>
+      <div class = "pretext"></div>
       <div class="socials-container">
-        <h1>Check out our latest posts on socials </h1>
+        <ul class="socials-links">
+          <li><a href="#"><img src = "insta.png"></img></a></li>
+          <li><a href="#"><img src = "tiktok.png"></img></a></li>
+          <li><a href="#"><img src = "facebook.png"></img></a></li>
+        </ul>
       </div>
 
     </div>
     <footer>
       <ul class="nav-links">
-        <li><a href="#"><img src = "home.png"></img></a></li>
+        <li class="active"><a href="#"><img src = "home.png"></img></a></li>
         <li><a href="#"><img src = "drills.png"></img></a></li>
         <li><a href="#"><img src = "booking.png"></img></a></li>
         <li><a href="#"> <img src = "profile.png"></img></a></li>
