@@ -46,28 +46,50 @@ body {
   font-family: "Alegreya Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
+  font-size: 1.5vw;
+  overflow: hidden;
+}
+
+.socials-container { 
+  padding-left: 20px; /* Consider adjusting if needed */
+  padding-top: 15px;   /* Consider adjusting if needed */
+  padding-right: 20px; /* Add right padding to match left */
+  padding-bottom: 15px; /* Add bottom padding to match top */
+  width: auto; 
+  height: auto; 
+  border-radius: 5px; 
+  background-color: rgb(52, 52, 52); 
+  margin: 10px; 
+  box-sizing: border-box; /* Include padding and border in width/height */
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 2vw;
   overflow: hidden;
 }
 
-.secondarycontainer h1::before {
+.socials-container h1::before {
   margin-top: 0; /* Remove any margin above the heading */
   margin-bottom: 0; /* Optional, to reduce gap below the heading */
   content: "";
   display: inline-block;
-  width: 25px;
+  width: 45px;
   aspect-ratio: 1 / 1;
   padding-bottom: 10%; /* Maintain the aspect ratio and add extra space */
   background: url("ball.png") no-repeat center center;
   background-size: contain;
-  margin-right: 2px;
+  margin-right: 5px;
+  margin-left: 2.5px;
+  padding-left: 0px;
   vertical-align: middle;
   margin-bottom: 0;
   font-size: 2vw;
+  padding: 0px;
 
 }
 
-.secondarycontainer h1 {
+.socials-container h1 {
+  font-size: px;
   font-family: "PT Serif", serif; 
   font-weight: 700; 
   font-style: italic; 
@@ -94,7 +116,7 @@ body {
 
 
 
-  .container img {
+  .drill img {
     filter: blur(5px);
     margin-top: 0;  /* Remove space above the paragraph */
     margin-bottom: 0; 
@@ -110,6 +132,14 @@ body {
     font-style: normal;
     box-sizing: border-box;
 /* Semi-transparent background */
+  }
+
+  .plus-icon img {
+    width: 40px; /* Adjust width as needed */
+    height: auto;
+    object-fit: contain;
+    display: block; /* Prevents extra space below the image */
+    margin: 0; /* Removes margin */
   }
 
   .container .drill-container{
@@ -149,42 +179,26 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 0;
   }
 
   .add-drill:hover {
     background-color: #222222; /* Darker shade for hover effect */
   }
   
- 
-.plus-icon {
-  position: relative;
-  width: 30px; /* Width of the plus sign */
-  height: 30px; /* Height of the plus sign */
-}
-
-.plus-icon::before,
-.plus-icon::after {
-  content: "";
-  position: absolute;
-  background-color: white;
-  border-radius: 2px;
-}
-
-.plus-icon::before {
-  width: 100%; /* Horizontal bar width */
-  height: 6px; /* Thickness of the horizontal bar */
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.plus-icon::after {
-  width: 6px; /* Thickness of the vertical bar */
-  height: 100%; /* Vertical bar height */
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  .plus-icon {
+    position: relative;
+    width: 30px; /* Makes the wrapper take full width */
+    height: 30px; /* Makes the wrapper take full height */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+  }
+  
+  .plus-icon img {
+    object-fit: contain;
+    display: block; /* Prevents extra space below the image */
+  }
 
 #preloader img{
   width: 80%;
