@@ -250,18 +250,27 @@ ul {
 }
 
 header {
-  position: sticky;
-  top: 0; /* Ensure it sticks at the top of the viewport */
-  z-index: 99999;
+  position: fixed; /* Keep header at the top of the screen */
+  top: 0; /* Ensures it stays at the top */
+  left: 0;
+  width: 100%; /* Ensure it spans the entire width of the screen */
+  z-index: 99999; /* Ensure it's above other content */
   color: #000000;
   background-color: #000000;
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  width: 100%; /* Ensure the header takes full width */
-  box-shadow: 0 8px 20px rgb(0, 0, 0);
-  margin-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Shadow effect */
+  margin-bottom: 10px;
+  height: 100px; /* Initial large height */
+  transition: height 0.3s ease, padding 0.3s ease; /* Smooth transition */
+  padding: 20px; /* Padding to create space around the content */
 }
+header.shrink {
+  height: 80px; /* Smaller height when scrolling */
+  padding: 5px; /* Adjust padding as needed */
+}
+
 
 .hlogo {
   display: flex; /* Ensure the logo is treated as a flex item */
@@ -272,10 +281,15 @@ header {
 }
 
 .hlogo img {
-  width: auto;
-  height: 100%; /* Makes sure the image respects the height */
+  width: 100%;
+  height: auto; /* Makes sure the image respects the height */
   max-width: 100%; /* Ensures the logo is not too big */
   object-fit: contain;
+  transition: all 0.7s ease;
+}
+
+header.shrink .hlogo img {
+  width: 80%; /* Smaller logo when header is shrunk */
 }
 
 

@@ -32,6 +32,25 @@ window.addEventListener("load", function() {
     }, 1000); // Match this time with the transition duration (fade out duration)
   }, preloaderDuration); // Show the preloader for the specified duration
 });
+window.onscroll = function() {
+  shrinkHeader();
+};
+
+window.onscroll = function() {
+  shrinkHeader();
+};
+
+function shrinkHeader() {
+  const header = document.querySelector('header');
+  
+  // Once you've scrolled past 100px, shrink the header
+  if (window.scrollY > 100) {
+    header.classList.add('shrink'); // Add the shrink class
+  } else {
+    header.classList.remove('shrink'); // Remove the shrink class
+  }
+}
+
 
   </script>
 </head>
