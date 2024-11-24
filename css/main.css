@@ -22,14 +22,19 @@ body {
   
 }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('assets/florida_project/Florida Project Phase One.ttf') format('truetype');
+}
+
 .pretext{
   margin-bottom: 0px;
   margin-left:10px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'CustomFont', sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
   font-style: normal;
-  font-size: 12px;
+  font-size: 20px;
   color: rgb(138, 89, 11);
 }
 
@@ -47,7 +52,6 @@ body {
   opacity: 1; /* Start fully visible */
   transition: opacity 1s ease; /* Transition to fade out */
 }
-
 
 .container { 
   padding-left: 20px; /* Consider adjusting if needed */
