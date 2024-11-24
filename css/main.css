@@ -10,7 +10,7 @@ body {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 500vh;
+  min-height: 100vh;
 }
 
 .content{
@@ -27,15 +27,18 @@ body {
   src: url('assets/florida_project/Florida Project Phase One.ttf') format('truetype');
 }
 
-.pretext{
-  margin-bottom: 0px;
-  margin-left:10px;
+.pretext {
+  margin-bottom: 0;
+  margin-left: 10px;
   font-family: 'CustomFont', sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
-  font-style: normal;
   font-size: 20px;
   color: rgb(138, 89, 11);
+  order: 1; /* Ensure it comes after sub-text */
+  word-wrap: break-word; /* Ensure text wraps within the container */
+  overflow-wrap: break-word; /* Alternative to word-wrap for more control */
+  white-space: normal; /* Allow wrapping of text */
 }
 
 #preloader {
@@ -51,6 +54,30 @@ body {
   z-index: 9999;
   opacity: 1; /* Start fully visible */
   transition: opacity 1s ease; /* Transition to fade out */
+}
+
+.containerd {
+  display: none;
+  flex-direction: column; /* This will ensure the children are stacked vertically */
+  align-items: flex-start;
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: rgb(52, 52, 52); 
+  margin: 30px;
+  gap: 10px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.5vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  z-index: 1000; /* Make sure it's above other content */
+  opacity: 0; /* Start as invisible for the fade effect */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
 }
 
 .container { 
@@ -233,6 +260,18 @@ height: 8px; /* Height for horizontal scrollbar */
     overflow-x: auto; /* Allow horizontal scrolling */
   }
 
+  .sub-text {
+    position: relative; /* Change to relative positioning */
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 20px;
+  }
   .overlay-text {
     position: absolute;
     top: 50%;
@@ -247,6 +286,26 @@ height: 8px; /* Height for horizontal scrollbar */
     font-weight: 700; 
     font-style: italic;
   }
+  .close {
+    position: absolute; /* Position relative to the parent */
+    top: 10px; /* Distance from the top of the parent container */
+    right: 10px; /* Distance from the right of the parent container */
+    width: 40px; /* Button size */
+    height: 40px;
+    border-radius: 50%; /* Circular button */
+    background-color: rgb(52, 52, 52); 
+    color: white;
+    font-size: 20px; /* Adjust size of the plus sign */
+    display: flex; /* Make it visible and align its content */
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 0;
+    z-index: 1000; /* Ensure it appears on top */
+}
+
 
   .add-drill {
     position: absolute;
