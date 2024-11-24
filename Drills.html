@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoop Theory</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<script>
+window.addEventListener("load", function() {
+  const preloaderDuration = 100; // Duration of preloader visibility
+  const preloader = document.getElementById('preloader');
+  const header = document.querySelector('header');
+  const navbar = document.querySelector('footer');
+  const content = document.querySelector('.content');
+
+  // Initially set opacity to 0 for header, navbar, and content to make them invisible
+  header.style.opacity = '0';
+  navbar.style.opacity = '0';
+  content.style.opacity = '0';
+
+  // Show the preloader for the specified duration
+  setTimeout(function() {
+    preloader.style.opacity = '0'; // Start fading out the preloader
+
+    // After fade-out completes, hide the preloader and reveal the header, navbar, and content
+    setTimeout(function() {
+      preloader.style.display = 'none'; // Hide the preloader
+
+      // Use opacity transition to fade in header, navbar, and content
+      header.style.display = 'flex';   // Set to flex to match the layout
+      navbar.style.display = 'flex';   // Make sure navbar is set to flex (or block if needed)
+      content.style.display = 'block'; // Content is set to block or flex as needed
+
+      // Trigger the fade-in effect by adding transition
+      setTimeout(function() {
+        header.style.transition = 'opacity 1s ease';
+        navbar.style.transition = 'opacity 1s ease';
+        content.style.transition = 'opacity 1s ease';
+
+        header.style.opacity = '1';
+        navbar.style.opacity = '1';
+        
+        // Delay the content fade-in by 0.5 seconds
+        setTimeout(function() {
+          content.style.opacity = '1';
+        }, 500); // Delay content fade-in by half a second (500ms)
+      }, 100); // Delay before applying transition
+    }, 1000); // Match this time with the fade-out duration
+  }, preloaderDuration); // Show the preloader for the specified duration
+});
+window.onscroll = function() {
+  shrinkHeader();
+};
+
+window.onscroll = function() {
+  shrinkHeader();
+};
+
+function shrinkHeader() {
+  const header = document.querySelector('header');
+  
+  // Once you've scrolled past 100px, shrink the header
+  if (window.scrollY > 100) {
+    header.classList.add('shrink'); // Add the shrink class
+  } else {
+    header.classList.remove('shrink'); // Remove the shrink class
+  }
+}
+
+
+  </script>
+</head>
+
+<body>
+
+  <div id="preloader">
+    <div class="intro-content">
+      <img src="assets/LOGO.png" alt="Logo" class="logo">
+    </div>
+</div>
+
+<header>
+    <div class="hlogo"><img src="assets/hlogo.png" alt=""></div>
+</header>
+    
+<div class="content">
+
+    <div class="pretext">HANDLES</div>
+      <div class="container">
+        <div class="drills-container" id="handles">
+          <div id="drill-1" class="drill"><img src="assets/drills/handles/1.png"></div>
+          <div id="drill-2" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-3" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-4" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-5" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-6" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-7" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-8" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-9" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-10" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-11" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-12" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-13" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-14" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-15" class="drill"><img src="assets/locked.png"></div>
+      </div>
+    </div>
+    <div class = "container">
+      <div class="drills-container" id="shooting">
+          <div id="drill-1" class="drill"><img src="assets/drill.gif"></div>
+          <div id="drill-2" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-3" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-4" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-5" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-6" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-7" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-8" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-9" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-10" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-11" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-12" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-13" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-14" class="drill"><img src="assets/locked.png"></div>
+          <div id="drill-15" class="drill"><img src="assets/locked.png"></div>
+      </div>
+    </div>
+      
+
+      
+    </div>
+
+
+</div>
+
+<footer>
+    <ul class="nav-links">
+        <li class="active"><a href="Index.html"><img src="assets/home.png" alt="Home"></a></li>
+        <li><a href="Drills.html"><img src="assets/drills.png" alt="Drills"></a></li>
+        <li><a href="Bookings.html"><img src="assets/booking.png" alt="Booking"></a></li>
+        <li><a href="Profile.html"><img src="assets/profile.png" alt="Profile"></a></li>
+    </ul>
+</footer>
+</body>
+</html>

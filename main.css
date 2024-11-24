@@ -61,7 +61,9 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: 1.5vw;
-  overflow: hidden;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling if not needed */
+  white-space: nowrap; /* Prevent content from wrapping */
 }
 
 .socials-container { 
@@ -130,25 +132,54 @@ body {
   line-height: normal; /
 }
 
+.drills-container {
+  width: 100%;                 /* Full width of the parent */
+  overflow-x: auto;            /* Enable horizontal scrolling */
+  display: flex;               /* Enable flex layout */
+  gap: 20px;                   /* Space between items */
+  flex-wrap: nowrap;           /* No wrapping of items */
+  padding-bottom: 10px;        /* Add some padding to ensure the scrollbar is visible */
+  scrollbar-width: thin;  
+  flex-wrap: nowrap; /* Prevent items from wrapping */
+  overflow-x: auto; /* Allow horizontal scrolling */     /* For Firefox */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling if not needed */
+  white-space: nowrap; /* Prevent content from wrapping */
+
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #ff9900 #e0e0e0; /* For Firefox */
+}
+
+/* Webkit Browsers (Chrome, Safari) */
+.drills-container::-webkit-scrollbar {
+height: 8px; /* Height for horizontal scrollbar */
+}
 
 
-  .drill img {
-    filter: blur(5px);
-    margin-top: 0;  /* Remove space above the paragraph */
-    margin-bottom: 0; 
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: contain;
-    margin: 0px;
-    padding: 0px;
-    display: block; /* Remove space below image */
-    font-family: "PT Serif", serif;
-    font-weight: 700;
-    font-style: normal;
-    box-sizing: border-box;
-/* Semi-transparent background */
-  }
+.drill {
+  flex: 0 0 auto;              /* Prevent the drill items from shrinking */
+}
+
+.drills-container img {
+  width: 100px;                /* Fixed width for images */
+  height: 100px;                /* Maintain aspect ratio */
+  border-radius: 10px;         /* Rounded corners */           /* Apply blur effect */
+  display: block;      
+  overflow: hidden;        /* Remove inline spacing below images *    /* Include padding and border in width calculation */
+  
+}
+
+
+#daily-drill img {
+  width: 100%;                /* Fixed width for images */
+  height: auto;                /* Maintain aspect ratio */
+  border-radius: 10px;         /* Rounded corners */
+  filter: blur(5px);           /* Apply blur effect */
+  display: block;      
+  overflow: hidden;        /* Remove inline spacing below images */
+  box-sizing: border-box; 
+}
+
 
   .plus-icon img {
     width: 40px; /* Adjust width as needed */
@@ -162,6 +193,34 @@ body {
     border-radius:10px ;
     overflow: hidden;
     position: relative;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    display: block;      
+    overflow: hidden;        /* Remove inline spacing below images */
+    box-sizing: border-box;   
+  }
+  
+
+  .container .drills-container img{
+    display: block;      
+    overflow: hidden;        /* R#emove inline spacing below images */
+    box-sizing: border-box;   
+    border-radius:10px ;
+    overflow: hidden;
+    position: relative;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    display: block;      
+    overflow: hidden;        /* Remove inline spacing below images */
+    box-sizing: border-box;  
+  }
+
+  .container .drills-container{
+    border-radius:10px ;
+    overflow: hidden;
+    position: relative;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling */
   }
 
   .overlay-text {

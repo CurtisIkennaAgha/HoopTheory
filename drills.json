@@ -1,0 +1,15 @@
+{
+    "categories": [
+      {
+        "name": "handles",
+        "path": "assets/drills/handles",
+        "drills": 15
+      },
+      {
+        "name": "shooting",
+        "path": "assets/drills/shooting",
+        "drills": 15
+      }
+    ]
+  }
+  
