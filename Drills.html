@@ -96,71 +96,50 @@ function shrinkHeader() {
 <div class="content">
 <a href = "drillnotes.html" > README</a>
 <br> <br>  
-    <div class="pretext">HANDLES</div>
-      <div class="container">
-        <div class="drills-container" id="handles">
-          <div id="drill-1" class="drill"><img src="assets/drills/handles/1.png"></div>
-          <div id="drill-2" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-3" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-4" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-5" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-6" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-7" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-8" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-9" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-10" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-11" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-12" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-13" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-14" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-15" class="drill"><img src="assets/locked.png"></div>
-      </div>
-    </div>
-    <div class = "pretext">FINISHING</div>
-    <div class = "container">
-      <div class="drills-container" id="shooting">
-          <div id="drill-1" class="drill"><img src="assets/drill.gif"></div>
-          <div id="drill-2" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-3" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-4" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-5" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-6" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-7" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-8" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-9" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-10" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-11" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-12" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-13" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-14" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-15" class="drill"><img src="assets/locked.png"></div>
-      </div>
-    </div>
-    <div class = "pretext">SHOOTING
-    </div>
-    <div class = "container">
-      <div class="drills-container" id="shooting">
-          <div id="drill-1" class="drill"><img src="assets/drill.gif"></div>
-          <div id="drill-2" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-3" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-4" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-5" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-6" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-7" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-8" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-9" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-10" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-11" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-12" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-13" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-14" class="drill"><img src="assets/locked.png"></div>
-          <div id="drill-15" class="drill"><img src="assets/locked.png"></div>
-      </div>
-    </div>
-      
+<div id="drills-section"></div>
+<script>
+  fetch('drills.json')
+    .then(response => response.json())
+    .then(data => {
+      const drillsSection = document.getElementById('drills-section');
 
-      
-    </div>
+      data.sections.forEach(section => {
+        // Add section title (outside the container)
+        const pretext = document.createElement('div');
+        pretext.classList.add('pretext');
+        pretext.textContent = section.name;
+        drillsSection.appendChild(pretext);
+
+        // Create section container
+        const sectionContainer = document.createElement('div');
+        sectionContainer.classList.add('container');
+
+        // Create drills container
+        const drillsContainer = document.createElement('div');
+        drillsContainer.classList.add('drills-container');
+
+        // Generate drills
+        for (let i = 1; i <= section.totalDrills; i++) {
+          const drill = document.createElement('div');
+          drill.classList.add('drill');
+          const img = document.createElement('img');
+          img.src =
+            i <= section.unlocked
+              ? `assets/drills/${section.name.toLowerCase()}/${i}.png`
+              : 'assets/locked.png';
+          drill.appendChild(img);
+          drillsContainer.appendChild(drill);
+        }
+
+        // Append drills container to section container
+        sectionContainer.appendChild(drillsContainer);
+        drillsSection.appendChild(sectionContainer);
+      });
+    })
+    .catch(error => console.error('Error loading drills JSON:', error));
+</script>
+
+
 
 
 </div>

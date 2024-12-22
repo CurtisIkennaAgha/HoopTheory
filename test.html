@@ -47,17 +47,75 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+  </script>
+  <!-- Firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script type="module">
+    import { firebaseConfig } from './config.js';
+
+
+    if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+  console.log("Firebase initialized successfully.");
+} else {
+  console.log("Firebase already initialized.");
+}
+// Reinitialize Firebase if not already initialized
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+
+
+// Function to check if the logged-in user's "type" equals 1
+export async function checkSubscriber() {
+  const user = auth.currentUser;
+
+  if (user) {
+    const uid = user.uid; // User ID
+    try {
+      const docRef = firestore.collection('users').doc(uid);
+      const docSnap = await docRef.get();
+
+      if (docSnap.exists) {
+        const userType = docSnap.data().type;
+
+        if (userType === 1) {
+          console.log("User is a subscriber (type 1).");
+          location.href = "subscriber_home.html";
+        } else {
+          console.log("User is not a subscriber (type != 1).");
+          location.href = "home.html";
+        }
+      } else {
+        console.log("No user document found in Firestore.");
+      }
+    } catch (error) {
+      console.error("Error checking subscriber status:", error);
+    }
+  } else {
+    console.log("No user is currently logged in.");
+  }
+}
+
   </script>
 </head>
 <body>
 <button class="add-drill">
-        <div class="plus-icon"><img src = "plus.png"></div>
+        <div class="plus-icon"><img src = "assets/plus.png"></div>
 </button>
 
 <div class = "containerd" id="subscribe">
     <div class="sub-text">Subscribe Now </div>
     <button class="close">
-        <div class="plus-icon"><img src = "close.png"></div>
+        <div class="plus-icon"><img src = "assets/close.png"></div>
     </button>
     <div class = "pretext">
     This section is currently a placeholder for the subscription information. Once all the necessary details are finalized, this area will be updated with comprehensive content about the subscription options, including features, pricing, and any additional benefits that may be offered. Right now, it’s simply here to fill space and provide an idea of how the layout will look with complete text. When the content is ready, this section will be polished and provide all the essential information users need to make an informed decision about their subscription options. Until then, this placeholder text serves to maintain the structure and visual balance of the design.

@@ -1,15 +1,19 @@
 {
-    "categories": [
-      {
-        "name": "handles",
-        "path": "assets/drills/handles",
-        "drills": 15
-      },
-      {
-        "name": "shooting",
-        "path": "assets/drills/shooting",
-        "drills": 15
-      }
-    ]
-  }
-  
+  "sections": [
+    {
+      "name": "HANDLES",
+      "unlocked": 1,
+      "totalDrills": 15
+    },
+    {
+      "name": "FINISHING",
+      "unlocked": 1,
+      "totalDrills": 15
+    },
+    {
+      "name": "SHOOTING",
+      "unlocked": 1,
+      "totalDrills": 15
+    }
+  ]
+}

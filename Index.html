@@ -13,9 +13,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+ 
+ <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
 <script>
 window.addEventListener("load", function() {
+  console.log("Login form display:", document.querySelector('.login.form').style.display);
+  console.log("Signup form display:", document.querySelector('.registration.form').style.display);
+  console.log("Forgot form display:", document.querySelector('.forgot.form').style.display);
+
+
+    const loginForm = document.querySelector('.login.form');
+    const signupForm = document.querySelector('.registration.form');
+    const forgotForm = document.querySelector('.forgot.form');
+
+    console.log("Login form computed display:", getComputedStyle(loginForm).display);
+    console.log("Signup form computed display:", getComputedStyle(signupForm).display);
+    console.log("Forgot form computed display:", getComputedStyle(forgotForm).display);
+
   const preloaderDuration = 500; // Duration of preloader visibility
   const preloader = document.getElementById('preloader');
   const header = document.querySelector('header');
@@ -57,9 +75,6 @@ window.addEventListener("load", function() {
     }, 1000); // Match this time with the fade-out duration
   }, preloaderDuration); // Show the preloader for the specified duration
 });
-window.onscroll = function() {
-  shrinkHeader();
-};
 
 window.onscroll = function() {
   shrinkHeader();
@@ -75,6 +90,38 @@ function shrinkHeader() {
     header.classList.remove('shrink'); // Remove the shrink class
   }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Add drill button click functionality
+    document.querySelector('.add-drill').addEventListener('click', function() {
+        const subscribeDiv = document.getElementById('subscribe');
+        
+        // Check if the element exists before modifying its style
+        if (subscribeDiv) {
+            // Make the container visible and fade in
+            subscribeDiv.style.display = 'flex'; // Show the container
+            setTimeout(function() {
+                subscribeDiv.style.opacity = 1; // Fade in
+            }, 10); // Delay to ensure display is updated before opacity changes
+        }
+    });
+
+    // Close button functionality
+    document.querySelector('.close').addEventListener('click', function() {
+        const subscribeDiv = document.getElementById('subscribe');
+        
+        // Check if the element exists before modifying its style
+        if (subscribeDiv) {
+            // Fade out and then hide the container
+            subscribeDiv.style.opacity = 0; // Fade out
+            setTimeout(function() {
+                subscribeDiv.style.display = 'none'; // Hide after fade
+            }, 500); // Wait for the fade effect to complete before hiding
+        }
+    });
+});
+
+
+
 
 
   </script>
@@ -91,9 +138,75 @@ function shrinkHeader() {
   <header>
     <div class="hlogo"><img src="assets/hlogo.png" alt=""></div>
   </header>
-    <div class="content">
+
+  <div class="content">
+  <div class="container" id = "logincontainer">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <form action="#">
+        <input type="text" id='inUsr' placeholder="Enter your email">
+        <input type="password" id="inPass" placeholder="Enter your password">
+        <span class="signup">
+          <a href="#" id="forgotLabel">Forgot password?</a>
+        </span>
+        <input type="button" class="button loginbtn" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <a href="#" id="signupLabel">Signup</a>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Signup</header>
+      <form action="#">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id='username' placeholder="Enter your username">
+        <input type="text" id='email' placeholder="Enter your email">
+        <input type="password" id='password' placeholder="Create a password">
+        <input type="button" class="button signupbtn" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <a href="#" id="loginLabel">Login</a>
+        </span>
+      </div>
+    </div>
+    <div class="forgot form" >
+      <header>Forgoot Password</header>
+      <form action="#">
+        <input type="text" id='forgotinp' placeholder="Enter your email">
+        <input type="button" class="button forgotbtn" value="Submit">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <a href="#" id="signupLabel">Signup</a>
+        </span>
+      </div>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <a href="#" id="loginLabel">Login</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="page0.js" type="module"></script>
+
+      <div class = "containerd" id="subscribe">
+        <div class="sub-text">Subscribe Now </div>
+        <button class="close">
+            <div class="plus-icon"><img src = "assets/close.png"></div>
+        </button>
+        <div class = "pretext">
+        This section is currently a placeholder for the subscription information. Once all the necessary details are finalized, this area will be updated with comprehensive content about the subscription options, including features, pricing, and any additional benefits that may be offered. Right now, it’s simply here to fill space and provide an idea of how the layout will look with complete text. When the content is ready, this section will be polished and provide all the essential information users need to make an informed decision about their subscription options. Until then, this placeholder text serves to maintain the structure and visual balance of the design.
+        </div>
+      </div>
+    
       <div class = "pretext"></div>
-      <div class="container">
+      <div class="container" >
         <div class ="drill-container">
           <div class = "drill" id = "daily-drill"><img src = "assets/drill.gif"></img></div>
           <div class="overlay-text">Drill Name</div>
