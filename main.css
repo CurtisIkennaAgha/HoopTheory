@@ -304,20 +304,6 @@ body {
     z-index: 1000; /* Ensure it appears on top */
 }
 
-  .pretext {
-    margin-bottom: 0;
-    margin-left: 10px;
-    font-family: "PT Serif", serif; 
-    font-weight: 700; 
-    font-style: italic;
-    letter-spacing: 0.5px;
-    font-size: 20px;
-    color: rgb(138, 89, 11);
-    order: 1; /* Ensure it comes after sub-text */
-    word-wrap: break-word; /* Ensure text wraps within the container */
-    overflow-wrap: break-word; /* Alternative to word-wrap for more control */
-    white-space: normal; /* Allow wrapping of text */
-  }
 
   .add-drill:hover {
     background-color: #222222; /* Darker shade for hover effect */

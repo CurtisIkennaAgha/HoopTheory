@@ -30,11 +30,11 @@ body {
 .pretext {
   margin-bottom: 0;
   margin-left: 10px;
-  font-family: 'CustomFont', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  font-size: 20px;
-  color: rgb(138, 89, 11);
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+  font-size: 20px; /* Adjust size */
+  font-weight: bold; /* Add weight if needed */
+  font-style: italic;
+  color: #ffffff; /* Adjust text color */
   order: 1; /* Ensure it comes after sub-text */
   word-wrap: break-word; /* Ensure text wraps within the container */
   overflow-wrap: break-word; /* Alternative to word-wrap for more control */
