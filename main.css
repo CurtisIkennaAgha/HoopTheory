@@ -24,6 +24,9 @@ body {
   margin-bottom: 0px;
   margin-left:10px;
   color: rgb(138, 89, 11);
+  word-wrap: break-word; /* Old specification */
+  overflow-wrap: break-word; /* Modern standard */
+  text-overflow: clip;
 }
 
 #preloader {
@@ -343,6 +346,7 @@ body {
 }
 
 .container .active {  /* Ensure only one form is active */
+  font-family: 'Poppins', sans-serif;
   display: none;
 }
 

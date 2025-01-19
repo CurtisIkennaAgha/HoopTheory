@@ -36,9 +36,8 @@ body {
   font-style: italic;
   color: #ffffff; /* Adjust text color */
   order: 1; /* Ensure it comes after sub-text */
-  word-wrap: break-word; /* Ensure text wraps within the container */
-  overflow-wrap: break-word; /* Alternative to word-wrap for more control */
-  white-space: normal; /* Allow wrapping of text */
+
+
 }
 
 #preloader {
@@ -182,9 +181,6 @@ body {
   overflow-x: auto; /* Enable horizontal scrolling */
   overflow-y: hidden; /* Hide vertical scrolling if not needed */
   white-space: nowrap; /* Prevent content from wrapping */
-
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #ff9900 #e0e0e0; /* For Firefox */
 }
 
 /* Webkit Browsers (Chrome, Safari) */
