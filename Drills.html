@@ -185,6 +185,15 @@ fetchDrillsData();
           const content = document.querySelector('.content');
           content.style.opacity = '0';
         });
+        
+        drill.addEventListener('touchstart', () => {
+          console.log('Drill touched!'); // Debug log
+          subscribeContainer.style.display = 'block'; // Make container visible
+          subscribeContainer.style.opacity = 1;
+          const content = document.querySelector('.content');
+          content.style.opacity = '0';
+        });
+
 
         drillsContainer.appendChild(drill);
       }
