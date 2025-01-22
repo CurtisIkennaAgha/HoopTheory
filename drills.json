@@ -3,17 +3,59 @@
     {
       "name": "HANDLES",
       "unlocked": 1,
-      "totalDrills": 15
+      "totalDrills": 15,
+      "drills": [
+        {
+          "name": "Handle Drill 1",
+          "imagePath": "assets/drills/handles/1.png",
+          "description": "This drill focuses on...",
+          "videoPath": "assets/drills/handles/1.mp4"
+        },
+        {
+          "name": "Handle Drill 2",
+          "imagePath": "assets/drills/handles/2.png",
+          "description": "A speed dribbling drill to enhance agility and control.",
+          "videoPath": "videos/handles/drill2.mp4"
+        }
+      ]
     },
     {
       "name": "FINISHING",
       "unlocked": 1,
-      "totalDrills": 15
+      "totalDrills": 15,
+      "drills": [
+        {
+          "name": "Finishing Drill 1",
+          "imagePath": "assets/drills/finishing/1.png",
+          "description": "A layup drill to develop finishing under pressure.",
+          "videoPath": "videos/finishing/drill1.mp4"
+        },
+        {
+          "name": "Finishing Drill 2",
+          "imagePath": "assets/drills/finishing/2.png",
+          "description": "Reverse layup practice to improve versatility near the rim.",
+          "videoPath": "videos/finishing/drill2.mp4"
+        }
+      ]
     },
     {
       "name": "SHOOTING",
       "unlocked": 1,
-      "totalDrills": 15
+      "totalDrills": 15,
+      "drills": [
+        {
+          "name": "Shooting Drill 1",
+          "imagePath": "assets/drills/shooting/1.png",
+          "description": "A catch-and-shoot drill to build consistency.",
+          "videoPath": "videos/shooting/drill1.mp4"
+        },
+        {
+          "name": "Shooting Drill 2",
+          "imagePath": "assets/drills/shooting/2.png",
+          "description": "Spot shooting from five key positions on the court.",
+          "videoPath": "videos/shooting/drill2.mp4"
+        }
+      ]
     }
   ]
 }

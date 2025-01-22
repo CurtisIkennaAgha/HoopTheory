@@ -28,16 +28,11 @@ body {
 }
 
 .pretext {
-  margin-bottom: 0;
-  margin-left: 10px;
   font-family: 'Arial', sans-serif; /* Change to your desired font */
   font-size: 20px; /* Adjust size */
   font-weight: bold; /* Add weight if needed */
-  font-style: italic;
   color: #ffffff; /* Adjust text color */
-  order: 1; /* Ensure it comes after sub-text */
-
-
+  margin-bottom: 10px; /* Add spacing below the pretext */
 }
 
 #preloader {
@@ -55,28 +50,110 @@ body {
   transition: opacity 1s ease; /* Transition to fade out */
 }
 
+/* Subscription Container */
 .containerd {
-  display: none;
-  flex-direction: column; /* This will ensure the children are stacked vertically */
-  align-items: flex-start;
-  position: relative;
-  min-height: 100vh;
+  display: none; /* Remains hidden until it is triggered */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;  /* Centering content horizontally */
+  position: fixed; /* Fixed to the center of the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the container */
+  width: 80%;
+  max-width: 600px;
+  height: auto;
   padding: 20px;
-  background-color: rgb(52, 52, 52); 
-  margin: 30px;
-  gap: 10px;
+  background-color: rgba(52, 52, 52, 0.9); /* Semi-transparent background */
   border-radius: 15px;
   box-sizing: border-box;
-  font-family: "Alegreya Sans", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 1.5vw;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  z-index: 1000; /* Make sure it's above other content */
-  opacity: 0; /* Start as invisible for the fade effect */
+  z-index: 1000; /* Ensure it's above other content */
+  opacity: 0; /* Start as invisible */
   transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+  text-align: center; /* Center all the text */
+  font-family: "Alegreya Sans", sans-serif; /* Keep consistent font */
+  font-size: 1.5vw; /* Responsive font size */
+}
+
+.containerd.visible {
+  display: flex; /* Show when visible */
+  opacity: 1; /* Make it visible */
+}
+
+/* Heading Style */
+.sub-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #f1c40f; /* Yellow color */
+}
+
+/* Drill Name */
+.pretext {
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+  font-style: italic;
+  font-size: 20px; /* Adjust size */
+  font-weight: bold; /* Add weight if needed */
+  color: #ffffff; /* Adjust text color */
+  margin-bottom: 10px; /* Add spacing below the pretext */
+}
+
+
+/* Drill Description */
+#drill-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ecf0f1; /* Light grey color */
+  font-style: italic;
+  max-width: 80%;
+  margin: 0 auto; /* Center it */
+}
+
+/* Image Style */
+#drill-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 20px 0;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#drill-image img:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Video Style */
+#drill-video video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Close Button */
+button.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+button.close:hover {
+  transform: scale(1.2); /* Button grows on hover */
+}
+
+button.close .plus-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Ensure the subscription container doesn't conflict with other elements */
+#subscribe {
+  display: none; /* Keeps the subscribe container hidden until necessary */
 }
 
 .container { 
@@ -179,8 +256,11 @@ body {
   flex-wrap: nowrap; /* Prevent items from wrapping */
   overflow-x: auto; /* Allow horizontal scrolling */     /* For Firefox */
   overflow-x: auto; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* Hide vertical scrolling if not needed */
   white-space: nowrap; /* Prevent content from wrapping */
+  position: relative; /* Ensure it doesn’t overlap other content unintentionally */
+  z-index: 1;         /* Ensure it’s behind other elements if necessary */
+  
+  
 }
 
 /* Webkit Browsers (Chrome, Safari) */

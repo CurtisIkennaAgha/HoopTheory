@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hoop Theory</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -195,12 +196,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 <script src="page0.js" type="module"></script>
 
-      <div class = "containerd" id="subscribe">
-        <div class="sub-text">Subscribe Now </div>
+    <div class = "containerd" id="subscribe">
+        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        <stripe-buy-button
+  buy-button-id="buy_btn_1QjrXKK3gHpSelWRhwOVKNbk"
+  publishable-key="pk_live_51NQzBiK3gHpSelWRjnlomVeIGGmAmnVnyMVMvO332tFmeCv65dj5IJgeXT3NIxi3cBcSKkUiv1jzNLmtCmelYHyD00W2mnYeU5"
+>
+        </stripe-buy-button>
         <button class="close">
             <div class="plus-icon"><img src = "assets/close.png"></div>
         </button>
-      </div>
+     </div>
     
       <div class = "pretext"></div>
       <div class="container" >
@@ -222,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <footer>
       <ul class="nav-links">
-        <li class="active"><a href="home.html"><img src = "assets/home.png"></img></a></li>
+        <li class="active"><a href="Index.html"><img src = "assets/home.png"></img></a></li>
         <li><a href="Drills.html"><img src = "assets/drills.png"></img></a></li>
         <li><a href="#"><img src = "assets/booking.png"></img></a></li>
         <li><a href="#"> <img src = "assets/profile.png"></img></a></li>

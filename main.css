@@ -29,6 +29,20 @@ body {
   text-overflow: clip;
 }
 
+
+#drill-name{
+  font-family: 'PT Serif', Georgia, Times, serif;
+  font-weight: 700; 
+  font-style: italic;
+  margin-bottom: 0px;
+  margin-left:10px;
+  color: rgb(138, 89, 11);
+  word-wrap: break-word; /* Old specification */
+  overflow-wrap: break-word; /* Modern standard */
+  text-overflow: clip;
+}
+
+
 #preloader {
   position: fixed;
   top: 0;
@@ -69,26 +83,22 @@ body {
 }
 .containerd {
   display: none;
-  flex-direction: column; /* This will ensure the children are stacked vertically */
+  flex-direction: column;
   align-items: flex-start;
   position: relative;
-  min-height: 100vh;
   padding: 20px;
-  background-color: rgb(52, 52, 52); 
-  margin: 30px;
+  background-color: rgb(52, 52, 52);
+  margin: 10px;
   gap: 10px;
   border-radius: 15px;
   box-sizing: border-box;
   font-family: "Alegreya Sans", sans-serif;
   font-weight: 300;
-  font-style: normal;
-  font-size: 1.5vw;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  z-index: 1000; /* Make sure it's above other content */
-  opacity: 0; /* Start as invisible for the fade effect */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+  font-size: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .socials-container { 
@@ -305,6 +315,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     padding: 0;
     z-index: 1000; /* Ensure it appears on top */
+}
+
+button.close:hover {
+  transform: scale(1.2); /* Button grows on hover */
 }
 
 

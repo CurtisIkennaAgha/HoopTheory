@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <script>
 window.addEventListener("load", function() {
-  const preloaderDuration = 100; // Duration of preloader visibility
+  const preloaderDuration = 50; // Duration of preloader visibility
   const preloader = document.getElementById('preloader');
   const header = document.querySelector('header');
   const navbar = document.querySelector('footer');
@@ -82,6 +82,7 @@ function shrinkHeader() {
   <style>
     .pretext {
       font-family: 'Arial', sans-serif; /* Change to your desired font */
+      font-style: italic;
       font-size: 20px; /* Adjust size */
       font-weight: bold; /* Add weight if needed */
       color: #ffffff; /* Adjust text color */
@@ -92,7 +93,6 @@ function shrinkHeader() {
 </head>
 
 <body>
-
   <div id="preloader">
     <div class="intro-content">
       <img src="assets/LOGO.png" alt="Logo" class="logo">
@@ -102,59 +102,118 @@ function shrinkHeader() {
 <header>
     <div class="hlogo"><img src="assets/drillsheader.png" alt=""></div>
 </header>
-    
+
+<div class="containerd" id="subscribe">
+    <div class="sub-text">
+        <span id="drill-name">Subscribe Now</span> <!-- This will be dynamically updated with the drill name -->
+    </div>
+    <button class="close">
+        <div class="plus-icon"><img src="assets/close.png" alt="Close"></div>
+    </button>
+    <div class="drill-details">
+        <span id="drill-video"></span> <!-- This will display a video link or video element -->
+        <span id="drill-description"></span> <!-- This will display the drill description -->
+    </div>
+</div>
+<script>
+  // Function to fetch the drills JSON and update the subscription container
+async function fetchDrillsData() {
+  try {
+    const response = await fetch('drills.json');
+    const data = await response.json();
+
+    // Example: Update subscription with the first drill of the first section
+    const firstDrill = data.sections[0].drills[0];
+    updateSubscription(firstDrill);
+  } catch (error) {
+    console.error('Error fetching drills data:', error);
+  }
+}
+
+// Function to update the subscription container with drill information
+function updateSubscription(drill) {
+  document.getElementById('drill-name').textContent = drill.name;
+  document.getElementById('drill-description').textContent = drill.description;
+  document.getElementById('drill-video').innerHTML = `<video controls>
+    <source src="${drill.videoPath}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>`;
+  document.getElementById('drill-image').innerHTML = `<img src="${drill.imagePath}" alt="${drill.name}" />`;
+}
+
+// Call the fetchDrillsData function to load the JSON data
+fetchDrillsData();
+
+</script>
 <div class="content">
 <br> <br>  
-<div id="drills-section"></div>
+<div id="drills-section">
 <script>
   fetch('drills.json')
-    .then(response => response.json())
-    .then(data => {
-      const drillsSection = document.getElementById('drills-section');
+  .then((response) => response.json())
+  .then((data) => {
+    const drillsSection = document.getElementById('drills-section');
+    const subscribeContainer = document.getElementById('subscribe');
 
-      data.sections.forEach(section => {
-        // Add section title (outside the container)
-        const pretext = document.createElement('div');
-        pretext.classList.add('pretext');
-        pretext.textContent = section.name;
-        drillsSection.appendChild(pretext);
+    data.sections.forEach((section) => {
+      const pretext = document.createElement('div');
+      pretext.classList.add('pretext');
+      pretext.textContent = section.name;
+      drillsSection.appendChild(pretext);
 
-        // Create section container
-        const sectionContainer = document.createElement('div');
-        sectionContainer.classList.add('container');
+      const sectionContainer = document.createElement('div');
+      sectionContainer.classList.add('container');
 
-        // Create drills container
-        const drillsContainer = document.createElement('div');
-        drillsContainer.classList.add('drills-container');
+      const drillsContainer = document.createElement('div');
+      drillsContainer.classList.add('drills-container');
 
-        // Generate drills
-        for (let i = 1; i <= section.totalDrills; i++) {
-          const drill = document.createElement('div');
-          drill.classList.add('drill');
-          const img = document.createElement('img');
-          img.src =
-            i <= section.unlocked
-              ? `assets/drills/${section.name.toLowerCase()}/${i}.png`
-              : 'assets/locked.png';
-          drill.appendChild(img);
-          drillsContainer.appendChild(drill);
-        }
+      for (let i = 1; i <= section.totalDrills; i++) {
+        const drill = document.createElement('div');
+        drill.classList.add('drill');
+        const img = document.createElement('img');
+        img.src =
+          i <= section.unlocked
+            ? `assets/drills/${section.name.toLowerCase()}/${i}.png`
+            : 'assets/locked.png';
+        drill.appendChild(img);
 
-        // Append drills container to section container
-        sectionContainer.appendChild(drillsContainer);
-        drillsSection.appendChild(sectionContainer);
-      });
-    })
-    .catch(error => console.error('Error loading drills JSON:', error));
+        // Add click event
+        drill.addEventListener('click', () => {
+          console.log('Drill clicked!'); // Debug log
+          subscribeContainer.style.display = 'block'; // Make container visible
+          subscribeContainer.style.opacity = 1;
+          const content = document.querySelector('.content');
+          content.style.opacity = '0';
+        });
+
+        drillsContainer.appendChild(drill);
+      }
+
+      sectionContainer.appendChild(drillsContainer);
+      drillsSection.appendChild(sectionContainer);
+    });
+  })
+  .catch((error) => console.error('Error loading drills JSON:', error));
+
+// Close button functionality
+document.querySelector('.close').addEventListener('click', () => {
+  const content = document.querySelector('.content');
+  const subscribeContainer = document.getElementById('subscribe');
+  console.log('Close button clicked!'); // Debug log
+  subscribeContainer.style.display = 'none'; // Hide container
+  content.style.opacity = '1';
+});
+
 </script>
+</div>
 </div>
 
 <footer>
     <ul class="nav-links">
-        <li class="active"><a href="home.html"><img src="assets/home.png" alt="Home"></a></li>
+        <li class="active"><a href="Index.html"><img src="assets/home.png" alt="Home"></a></li>
         <li><a href="Drills.html"><img src="assets/drills.png" alt="Drills"></a></li>
-        <li><a href="Bookings.html"><img src="assets/booking.png" alt="Booking"></a></li>
-        <li><a href="Profile.html"><img src="assets/profile.png" alt="Profile"></a></li>
+        <li><a href=""><img src="assets/booking.png" alt="Booking"></a></li>
+        <li><a href=""><img src="assets/profile.png" alt="Profile"></a></li>
     </ul>
 </footer>
 </body>
