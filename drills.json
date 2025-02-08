@@ -6,7 +6,7 @@
       "totalDrills": 15,
       "drills": [
         {
-          "name": "Handle Dri 1",
+          "name": "Handle Drill 1",
           "imagePath": "assets/drills/handles/1.png",
           "description": "This drill focuses on...",
           "videoPath": "assets/drills/handles/1.mp4"

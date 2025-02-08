@@ -143,6 +143,8 @@ function updateSubscription(drill) {
 
 // Call the fetchDrillsData function to load the JSON data
 fetchDrillsData();
+document.querySelector('#drill-video video').load();
+
 
 </script>
 <div class="content">
@@ -176,15 +178,6 @@ fetchDrillsData();
             ? `assets/drills/${section.name.toLowerCase()}/${i}.png`
             : 'assets/locked.png';
         drill.appendChild(img);
-
-        // Add click event
-        drill.addEventListener('click', () => {
-          console.log('Drill clicked!'); // Debug log
-          subscribeContainer.style.display = 'block'; // Make container visible
-          subscribeContainer.style.opacity = 1;
-          const content = document.querySelector('.content');
-          content.style.opacity = '0';
-        });
 
         let startX, startY, startTime;
 
