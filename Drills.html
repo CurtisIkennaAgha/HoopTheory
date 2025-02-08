@@ -169,14 +169,14 @@ document.querySelector('#drill-video video').load();
       const drillsContainer = document.createElement('div');
       drillsContainer.classList.add('drills-container');
 
-      for (let i = 1; i <= section.totalDrills; i++) {
+      section.drills.forEach((drillData, index) => {
         const drill = document.createElement('div');
         drill.classList.add('drill');
+
         const img = document.createElement('img');
-        img.src =
-          i <= section.unlocked
-            ? `assets/drills/${section.name.toLowerCase()}/${i}.png`
-            : 'assets/locked.png';
+        img.src = index < section.unlocked
+          ? `assets/drills/${section.name.toLowerCase()}/${index + 1}.png`
+          : 'assets/locked.png';
         drill.appendChild(img);
 
         let startX, startY, startTime;
@@ -196,25 +196,33 @@ document.querySelector('#drill-video video').load();
             const deltaY = Math.abs(endY - startY);
             const deltaTime = endTime - startTime;
 
-            // Define a threshold for tap (small movement and short duration)
             if (deltaX < 10 && deltaY < 10 && deltaTime < 300) {  
-                console.log('Drill tapped!'); // Debug log
+                console.log('Drill tapped:', drillData.name); 
+                updateSubscription(drillData); // Pass specific drill data
                 subscribeContainer.style.display = 'block';
                 subscribeContainer.style.opacity = 1;
                 document.querySelector('.content').style.opacity = '0';
             }
         });
 
-
-
         drillsContainer.appendChild(drill);
-      }
+      });
 
       sectionContainer.appendChild(drillsContainer);
       drillsSection.appendChild(sectionContainer);
     });
   })
   .catch((error) => console.error('Error loading drills JSON:', error));
+
+function updateSubscription(drill) {
+  document.getElementById('drill-name').textContent = drill.name;
+  document.getElementById('drill-description').textContent = drill.description;
+  document.getElementById('drill-video').innerHTML = `
+    <video controls playsinline muted>
+      <source src="${drill.videoPath}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>`;
+}
 
 // Close button functionality
 document.querySelector('.close').addEventListener('click', () => {
