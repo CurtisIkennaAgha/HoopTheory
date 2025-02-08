@@ -185,14 +185,33 @@ fetchDrillsData();
           const content = document.querySelector('.content');
           content.style.opacity = '0';
         });
-        
-        drill.addEventListener('touchstart', () => {
-          console.log('Drill touched!'); // Debug log
-          subscribeContainer.style.display = 'block'; // Make container visible
-          subscribeContainer.style.opacity = 1;
-          const content = document.querySelector('.content');
-          content.style.opacity = '0';
+
+        let startX, startY, startTime;
+
+        drill.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            startTime = new Date().getTime();
         });
+
+        drill.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const endTime = new Date().getTime();
+
+            const deltaX = Math.abs(endX - startX);
+            const deltaY = Math.abs(endY - startY);
+            const deltaTime = endTime - startTime;
+
+            // Define a threshold for tap (small movement and short duration)
+            if (deltaX < 10 && deltaY < 10 && deltaTime < 300) {  
+                console.log('Drill tapped!'); // Debug log
+                subscribeContainer.style.display = 'block';
+                subscribeContainer.style.opacity = 1;
+                document.querySelector('.content').style.opacity = '0';
+            }
+        });
+
 
 
         drillsContainer.appendChild(drill);
