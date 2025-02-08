@@ -151,7 +151,7 @@ document.querySelector('#drill-video video').load();
 <br> <br>  
 <div id="drills-section">
 <script>
-  fetch('drills.json')
+fetch('drills.json')
   .then((response) => response.json())
   .then((data) => {
     const drillsSection = document.getElementById('drills-section');
@@ -175,7 +175,7 @@ document.querySelector('#drill-video video').load();
 
         const img = document.createElement('img');
         img.src = index < section.unlocked
-          ? `assets/drills/${section.name.toLowerCase()}/${index + 1}.png`
+          ? drillData.imagePath
           : 'assets/locked.png';
         drill.appendChild(img);
 
@@ -197,11 +197,15 @@ document.querySelector('#drill-video video').load();
             const deltaTime = endTime - startTime;
 
             if (deltaX < 10 && deltaY < 10 && deltaTime < 300) {  
-                console.log('Drill tapped:', drillData.name); 
-                updateSubscription(drillData); // Pass specific drill data
-                subscribeContainer.style.display = 'block';
-                subscribeContainer.style.opacity = 1;
-                document.querySelector('.content').style.opacity = '0';
+                if (index >= section.unlocked) {
+                    console.log(`🔒 Drill Locked: ${drillData.name}`);
+                } else {
+                    console.log(`✅ Drill Unlocked: ${drillData.name}`);
+                    updateSubscription(drillData); 
+                    subscribeContainer.style.display = 'block';
+                    subscribeContainer.style.opacity = 1;
+                    document.querySelector('.content').style.opacity = '0';
+                }
             }
         });
 
