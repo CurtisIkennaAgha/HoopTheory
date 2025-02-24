@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="LOGO.png"></img></div>
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">SERVICES</a>
+      <a href="#">SHOP</a>
+      <a href="#">FAQ's</a>
+      <a href="#"></a>
+    </div>
+    <!-- Hamburger Menu for Mobile -->
+    <button id="menu-toggle" class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+  </nav>
+
+  <!-- Sidebar for Mobile -->
+  <div id="mobile-menu" class="sidebar">
+    <button id="close-sidebar" class="close-button"> &times;</button>
+    <nav class="sidebar-links">
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">SERVICES</a>
+      <a href="#">SHOP</a>
+      <a href="#">FAQ's</a>
+    </nav>
+  </div>
+
+  <script>
+    // Menu toggle functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeSidebar = document.getElementById('close-sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('sidebar-open');
+    });
+
+    closeSidebar.addEventListener('click', () => {
+      mobileMenu.classList.remove('sidebar-open');
+    });
+  </script>
+<section class="hero-section">
+  <div class="hero-image" style="background-image: url('download.png');"></div>
+  <div class="hero-image" style="background-image: url('download\ \(1\).png');"></div>
+  <div class="hero-overlay">
+    <img src = "hlogo.png"></img>
+    <p>Your first step to understanding and applying elite
+      basketball skills acquisition starts here.</p>
+  </div>
+</section>
+<section class="content-section">
+  <div class="text-content">
+    <h1>WHAT THE FLIP IS</h1>
+    <h2>HOOP THEORY?</h2>
+  </div>
+  <div class="curved-image">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/Pk8fkNaTNvQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+<section class="testimonials-section">
+  <h1 class="testimonials-title">TESTIMONIALS</h1>
+  <p class="testimonials-subtitle">What our clients have to say</p>
+</section>
+<div class="dual-frame-container">
+  <!-- First Frame -->
+  <div class="dual-frame">
+    <div class="dual-frame-image" style="background-image: url('rev1.png');"></div>
+    <div class="dual-frame-text">
+      <h2>Title One</h2>
+      <p>Some description for this section. You can put any content here.</p>
+    </div>
+  </div>
+
+  <!-- Second Frame -->
+  <div class="dual-frame">
+    <div class="dual-frame-image" style="background-image: url('rev2.png');"></div>
+    <div class="dual-frame-text">
+      <h2>Title Two</h2>
+      <p>Some description for this section. You can put any content here. ">.................."</p>
+    </div>
+  </div>
+
+   <!-- First Frame -->
+   <div class="dual-frame">
+    <div class="dual-frame-image" style="background-image: url('rev1.png');"></div>
+    <div class="dual-frame-text">
+      <h2>Title One</h2>
+      <p>Some description for this section. You can put any content here.</p>
+    </div>
+  </div>
+
+  <!-- Second Frame -->
+  <div class="dual-frame">
+    <div class="dual-frame-image" style="background-image: url('rev2.png');"></div>
+    <div class="dual-frame-text">
+      <h2>Title Two</h2>
+      <p>Some description for this section. You can put any content here. ">.................."</p>
+    </div>
+  </div>
+</div>
+
+<section class="testimonials-section">
+  <h1 class="testimonials-title">SOCIALS</h1>
+  <p class="testimonials-subtitle">What our clients have to say</p>
+  <div class="photo-link-section">
+    <a href="link1.html" class="photo-link" style="background-image: url('photo1.jpg');"></a>
+    <a href="link2.html" class="photo-link" style="background-image: url('photo2.jpg');"></a>
+    <a href="link3.html" class="photo-link" style="background-image: url('photo3.jpg');"></a>
+  </div>
+  
+</section>
+
+<section class="new-section">
+  <div class="new-section-content">
+    <h1>Main Title</h1>
+    <p>Smaller centered text below the title.</p>
+  </div>
+  
+  <div class="image-container">
+    <div class="image-box">
+      <h2>Image One</h2>
+      <img src="rev1.png" alt="Description of image one">
+    </div>
+    <div class="image-box">
+      <h2>Image Two</h2>
+      <img src="rev2.png" alt="Description of image two">
+    </div>
+  </div>
+</section>
+
+<section class="single-image-section">
+  <div class="single-image-content">
+    <h1>Your Main Title</h1>
+    <p>Your description or any text below the main title.</p>
+  </div>
+  <div class="single-image-container">
+    <div class="single-image-box">
+      <h2>Image Caption</h2>
+      <img src="menu.png" alt="description of the image">
+    </div>
+  </div>
+</section>
+
+<section class="new-section">
+  <div class="new-section-content">
+    <h1>Main Title</h1>
+    <p>Smaller centered text below the title.</p>
+  </div>
+  
+  <div class="image-container">
+    <div class="image-box">
+      <h2>Image One</h2>
+      <img src="rev1.png" alt="Description of image one">
+    </div>
+    <div class="image-box">
+      <h2>Image Two</h2>
+      <img src="rev2.png" alt="Description of image two">
+    </div>
+  </div>
+</section>
+
+<section class="new-section">
+  <div class="new-section-content">
+    <h1>Main Title</h1>
+    <p>Smaller centered text below the title.</p>
+  </div>
+  
+  <div class="image-container">
+    <div class="image-box">
+      <h2>Image One</h2>
+      <img src="rev1.png" alt="Description of image one">
+    </div>
+    <div class="image-box">
+      <h2>Image Two</h2>
+      <img src="rev2.png" alt="Description of image two">
+    </div>
+  </div>
+</section>
+
+<section class="single-image-section">
+  <div class="single-image-content">
+    <h1>Your Main Title</h1>
+    <p>Your description or any text below the main title.</p>
+  </div>
+  <div class="single-image-container">
+    <div class="single-image-box">
+      <h2>Image Caption</h2>
+      <img src="menu.png" alt="description of the image">
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
