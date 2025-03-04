@@ -47,18 +47,15 @@ h1, h2, h3 {
 
 .testimonials-title {
   -webkit-font-smoothing: antialiased; 
-  color: red; /* Temporary debug color */
+  color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  text-align: left; /* Align text to the left */
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-family: sans-serif; /* Use a fallback font */
   z-index: 100; /* Bring the text to the front */
   position: relative; /* Ensure z-index works */
   white-space: normal; /* Ensure text wraps if needed */
   overflow: visible; /* Ensure text is not clipped */
-  border: 2px solid lime; /* Bright border for debugging */
-  background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red background */
   margin: 0; /* Reset margins */
   padding: 0; /* Reset padding */
 }
