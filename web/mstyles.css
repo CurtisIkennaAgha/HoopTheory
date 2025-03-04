@@ -42,6 +42,9 @@ h1, h2, h3 {
   align-items: flex-start; /* Align text to the left */
   padding: 4rem;
   background-color: #000000;
+  overflow: visible; /* Ensure content is not clipped */
+  height: auto; /* Ensure the container has height */
+  display: flex; /* Ensure the container is visible */
 }
 
 .testimonials-title {
@@ -53,7 +56,7 @@ h1, h2, h3 {
   text-align: center; /* Horizontally centers text within its container */
   font-size: 4rem;
 /* Larger font for emphasis */
-  font-family: 'Florida Project One', sans-serif;
+  font-family: sans-serif;
   z-index: 20;
   white-space: normal; /* Ensure text wraps if needed */
   overflow: visible; /* Ensure text is not clipped */
