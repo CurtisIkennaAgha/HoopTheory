@@ -35,32 +35,31 @@ h1, h2, h3 {
   flex-wrap: wrap; /* Allow content to wrap on smaller screens */
 }
 
-/* Testimonials Section */
 .testimonials-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align text to the left */
   padding: 4rem;
   background-color: #000000;
+  color: white;
   overflow: visible; /* Ensure content is not clipped */
-  height: auto; /* Ensure the container has height */
-  display: flex; /* Ensure the container is visible */
 }
 
 .testimonials-title {
-  color: beige;
+  color: red; /* Temporary debug color */
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertically centers the text */
-  text-align: center; /* Horizontally centers text within its container */
+  display: block; /* Temporarily disable flexbox */
+  text-align: left; /* Align text to the left */
   font-size: 4rem;
-/* Larger font for emphasis */
-  font-family: sans-serif;
-  z-index: 20;
+  font-family: sans-serif; /* Use a fallback font */
+  z-index: 100; /* Bring the text to the front */
+  position: relative; /* Ensure z-index works */
   white-space: normal; /* Ensure text wraps if needed */
   overflow: visible; /* Ensure text is not clipped */
-  border: 20px solid red;
+  border: 2px solid lime; /* Bright border for debugging */
+  background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red background */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
 }
 
 .testimonials-subtitle {
