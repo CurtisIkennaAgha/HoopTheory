@@ -46,6 +46,7 @@ h1, h2, h3 {
 }
 
 .testimonials-title {
+  -webkit-font-smoothing: antialiased; 
   color: red; /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
