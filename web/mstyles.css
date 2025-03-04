@@ -75,7 +75,13 @@ h1, h2, h3 {
 }
 
 .testimonials-title {
-  font-size: 2rem;
+  color: beige;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text */
+  text-align: center; /* Horizontally centers text within its container */
+  font-size: 4rem;
 /* Larger font for emphasis */
   font-family: 'Florida Project One', sans-serif;
   margin-top: 0.5rem;
@@ -101,7 +107,6 @@ h1, h2, h3 {
   flex-direction: column;
   justify-content: center; /* Vertically centers the text */
   text-align: center; /* Horizontally centers text within its container */
-  padding-right: 2rem; /* Adds spacing between the text and the video */
 }
 
 .text-content h1 {
