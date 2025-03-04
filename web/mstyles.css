@@ -58,6 +58,7 @@ h1, h2, h3 {
   z-index: 20;
   white-space: normal; /* Ensure text wraps if needed */
   overflow: visible; /* Ensure text is not clipped */
+  border: 20px solid red;
 }
 
 .testimonials-subtitle {
