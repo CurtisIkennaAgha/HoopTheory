@@ -42,7 +42,6 @@ h1, h2, h3 {
   align-items: flex-start; /* Align text to the left */
   padding: 4rem;
   background-color: #000000;
-  color: white;
 }
 
 .testimonials-title {
