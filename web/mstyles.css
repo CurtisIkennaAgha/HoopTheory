@@ -1,0 +1,257 @@
+/* Import all the fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Florida+Project+One&family=PT+Serif&family=Alegreya+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Florida+Project+One&display=swap');
+
+@font-face {
+    font-family: 'Florida Project One';
+    src: url('Florida Project Phase One.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive font sizes using clamp() */
+section p {
+  font-size: clamp(0.875rem, 2vw + 1rem, 1.25rem); /* Minimum, preferred, and maximum font size */
+}
+
+section h1 {
+  font-size: clamp(2rem, 5vw + 2rem, 3rem); /* H1 font size scales within this range */
+}
+
+section h2 {
+  font-size: clamp(1.75rem, 4vw + 1.5rem, 2.5rem); /* H2 font size scales within this range */
+}
+
+section h3 {
+  font-size: clamp(1.5rem, 3.5vw + 1rem, 2.2rem); /* H3 font size scales within this range */
+}
+
+section h4 {
+  font-size: clamp(1.25rem, 3vw + 1rem, 2rem); /* H4 font size scales within this range */
+}
+
+section h5 {
+  font-size: clamp(1.1rem, 2.5vw + 0.9rem, 1.8rem); /* H5 font size scales within this range */
+}
+
+section h6 {
+  font-size: clamp(1rem, 2vw + 0.8rem, 1.6rem); /* H6 font size scales within this range */
+}
+
+/* Apply the fonts to different elements */
+h1, h2, h3 {
+  font-family: 'Florida Project One', sans-serif;
+}
+
+.nav-links a {
+  font-family: 'Florida Project One', sans-serif;
+  font-weight: 400;
+}
+
+/* Content Section */
+.content-section {
+  display: flex;
+  flex-direction: column; /* Stack content vertically on mobile */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem; /* Reduced padding for mobile */
+  background-color: #ff0000;
+  box-sizing: border-box;
+}
+
+.text-content {
+  color: beige;
+  text-align: center; /* Center text on mobile */
+  padding: 1rem; /* Reduced padding for mobile */
+}
+
+.text-content h1, .text-content h2 {
+  font-size: 2.5rem; /* Smaller font size for mobile */
+  line-height: 1.2;
+  margin: 0;
+}
+
+.curved-image {
+  width: 100%; /* Full width on mobile */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 1rem; /* Add space between text and image */
+  border: 8px solid white;
+  border-radius: 15px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content on mobile */
+  padding: 2rem; /* Reduced padding for mobile */
+  background-color: #000000;
+  color: white;
+}
+
+.testimonials-title {
+  font-size: clamp(2rem, 6vw, 4rem); /* Smaller font size for mobile */
+  font-family: 'Florida Project One', sans-serif;
+  margin: 0.5rem 0; /* Adjusted margin for mobile */
+}
+
+.testimonials-subtitle {
+  font-size: 2rem; /* Smaller font size for mobile */
+  font-family: 'PT Serif', serif;
+  margin: 0.5rem 0; /* Adjusted margin for mobile */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column; /* Stack content vertically on mobile */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-overlay {
+  width: 90%; /* Full width on mobile */
+  text-align: center;
+}
+
+.hero-overlay img {
+  width: 100%; /* Full width on mobile */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.hero-overlay p {
+  font-size: 1.5rem; /* Smaller font size for mobile */
+  margin-top: 1rem; /* Adjusted margin for mobile */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; /* Reduced padding for mobile */
+}
+
+.nav-links {
+  display: none; /* Hide nav links on mobile */
+}
+
+.hamburger {
+  display: flex; /* Show hamburger menu on mobile */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 100%; /* Full width on mobile */
+  transform: translateX(-100%);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+/* Dual Frame Container */
+.dual-frame-container {
+  flex-direction: column; /* Stack frames vertically on mobile */
+  padding: 1rem; /* Reduced padding for mobile */
+}
+
+.dual-frame {
+  width: 100%; /* Full width on mobile */
+  height: auto; /* Adjust height automatically */
+  margin-bottom: 1rem; /* Add space between frames */
+}
+
+.dual-frame-image {
+  width: 100%; /* Full width on mobile */
+  height: 150px; /* Fixed height for mobile */
+}
+
+.dual-frame-text {
+  width: 100%; /* Full width on mobile */
+  padding: 1rem; /* Reduced padding for mobile */
+  text-align: center; /* Center text on mobile */
+}
+
+/* Photo Link Section */
+.photo-link-section {
+  flex-direction: column; /* Stack images vertically on mobile */
+  gap: 1rem; /* Add space between images */
+  padding: 1rem; /* Reduced padding for mobile */
+}
+
+.photo-link {
+  width: 100%; /* Full width on mobile */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  margin: 0.5rem 0; /* Adjusted margin for mobile */
+}
+
+/* Image Section */
+.image-section, .single-image-section {
+  padding: 1rem; /* Reduced padding for mobile */
+}
+
+.image-section-content h1, .single-image-content h1 {
+  font-size: 2.5rem; /* Smaller font size for mobile */
+}
+
+.image-section-content h2, .single-image-content h2 {
+  font-size: 2rem; /* Smaller font size for mobile */
+}
+
+.image-section-content p, .single-image-content p {
+  font-size: 1.25rem; /* Smaller font size for mobile */
+}
+
+/* Responsive Fixes */
+@media (min-width: 768px) {
+  /* Revert to desktop styles for larger screens */
+  .content-section {
+    flex-direction: row;
+    padding: 2rem 5rem;
+  }
+
+  .text-content h1, .text-content h2 {
+    font-size: 6rem;
+  }
+
+  .curved-image {
+    max-width: 50%;
+    height: 80%;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .dual-frame-container {
+    flex-direction: row;
+  }
+
+  .dual-frame {
+    width: 45%;
+  }
+
+  .photo-link-section {
+    flex-direction: row;
+  }
+
+  .photo-link {
+    width: calc(30% - 2rem);
+  }
+}
