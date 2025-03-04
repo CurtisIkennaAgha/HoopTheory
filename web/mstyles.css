@@ -13,35 +13,6 @@
   box-sizing: border-box;
 }
 
-/* Responsive font sizes using clamp() */
-section p {
-  font-size: clamp(0.875rem, 2vw + 1rem, 1.25rem); /* Minimum, preferred, and maximum font size */
-}
-
-section h1 {
-  font-size: clamp(2rem, 5vw + 2rem, 3rem); /* H1 font size scales within this range */
-}
-
-section h2 {
-  font-size: clamp(1.75rem, 4vw + 1.5rem, 2.5rem); /* H2 font size scales within this range */
-}
-
-section h3 {
-  font-size: clamp(1.5rem, 3.5vw + 1rem, 2.2rem); /* H3 font size scales within this range */
-}
-
-section h4 {
-  font-size: clamp(1.25rem, 3vw + 1rem, 2rem); /* H4 font size scales within this range */
-}
-
-section h5 {
-  font-size: clamp(1.1rem, 2.5vw + 0.9rem, 1.8rem); /* H5 font size scales within this range */
-}
-
-section h6 {
-  font-size: clamp(1rem, 2vw + 0.8rem, 1.6rem); /* H6 font size scales within this range */
-}
-
 /* Apply the fonts to different elements */
 h1, h2, h3 {
   font-family: 'Florida Project One', sans-serif;
@@ -84,9 +55,7 @@ h1, h2, h3 {
   font-size: 4rem;
 /* Larger font for emphasis */
   font-family: 'Florida Project One', sans-serif;
-  margin-top: 0.5rem;
-  margin-left: 30px;
-  margin-bottom: 0px;
+  z-index: 20;
 }
 
 .testimonials-subtitle {
