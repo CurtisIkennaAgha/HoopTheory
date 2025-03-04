@@ -56,6 +56,8 @@ h1, h2, h3 {
 /* Larger font for emphasis */
   font-family: 'Florida Project One', sans-serif;
   z-index: 20;
+  white-space: normal; /* Ensure text wraps if needed */
+  overflow: visible; /* Ensure text is not clipped */
 }
 
 .testimonials-subtitle {
