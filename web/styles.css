@@ -47,7 +47,8 @@ h1, h2, h3 {
 }
 
 .testimonials-title {
-  font-size: 7rem; /* Larger font for emphasis */
+  font-size: clamp(2rem, 6vw, 7rem);
+/* Larger font for emphasis */
   font-family: 'Florida Project One', sans-serif;
   margin-top: 0.5rem;
   margin-left: 30px;
