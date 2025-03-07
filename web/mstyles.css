@@ -183,7 +183,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 75%; /* Image or content will be 60% of the container's width */
+  width: 100%; /* Image or content will be 60% of the container's width */
   text-align: center;
   z-index: 1;
   display: flex;
