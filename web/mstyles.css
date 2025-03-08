@@ -168,7 +168,7 @@ body {
   display: flex;
   position: relative;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   box-sizing: border-box;
   flex-wrap: wrap;
 }
