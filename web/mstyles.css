@@ -42,6 +42,7 @@ h1, h2, h3 {
   background-color: #000000;
   color: white;
   overflow: visible; /* Ensure content is not clipped */
+  margin: 8px;
 }
 
 .testimonials-title {
