@@ -385,13 +385,10 @@ body {
 
 /* Ensuring content stays above the overlay */
 .image-section-content, .image-container, .single-image-content, .single-image-container {
-  position: relative;
-  z-index: 2;
 }
 
 /* Titles and Subtitle */
 .image-section-content, .single-image-content {
-  font-size: 1rem;
   color: white;
   text-align: center;
   display: flex;
@@ -399,7 +396,6 @@ body {
   align-items: center; /* Horizontally center children */ /* Align text to the left */
   color: white;
   overflow: visible; /* Ensure content is not clipped */
-  
 }
 
 .image-section-content h1, .single-image-content h1 {
