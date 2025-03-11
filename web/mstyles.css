@@ -403,32 +403,56 @@ body {
 }
 
 .image-section-content h1, .single-image-content h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Horizontally center children */ /* Align text to the left */
-  color: white;
-  overflow: visible; /* Ensure content is not clipped */
-  font-size: 2.5rem;
-  margin: 0;
+  margin: 8px;
+  -webkit-font-smoothing: antialiased; 
+  text-align: center;
+  color: rgb(255, 255, 255); /* Temporary debug color */
+  flex: 1;
+  display: block; /* Temporarily disable flexbox */
+  font-size: 2.6rem;
   font-family: 'Florida Project One', sans-serif;
+  line-height: 1.2;
+  z-index: 100; /* Bring the text to the front */
+  position: relative; /* Ensure z-index works */
+  white-space: normal; /* Ensure text wraps if needed */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
 }
 
 /* Updated H2 */
 .image-box h2, .single-image-box h2 {
-  
-  font-size: 1rem; /* Bigger than before but still smaller than H1 */
-  color: white;
+  margin: 8px;
+  -webkit-font-smoothing: antialiased; 
+  text-align: center;
+  color: rgb(255, 255, 255); /* Temporary debug color */
+  flex: 1;
+  display: block; /* Temporarily disable flexbox */
+  font-size: 2.6rem;
+  font-family: 'Florida Project One', sans-serif;
+  line-height: 1.2;
+  z-index: 100; /* Bring the text to the front */
+  position: relative; /* Ensure z-index works */
+  white-space: normal; /* Ensure text wraps if needed */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
 }
 
 /* New H3 Styling */
 .image-section-content h3, .single-image-content h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Horizontally center children */ /* Align text to the left */
-  color: white;
-  overflow: visible; /* Ensure content is not clipped */
+  margin: 8px;
+  -webkit-font-smoothing: antialiased; 
+  text-align: center;
+  color: rgb(255, 255, 255); /* Temporary debug color */
+  flex: 1;
+  display: block; /* Temporarily disable flexbox */
+  font-size: 2.6rem;
+  font-family: 'Florida Project One', sans-serif;
+  line-height: 1.2;
+  z-index: 100; /* Bring the text to the front */
+  position: relative; /* Ensure z-index works */
+  white-space: normal; /* Ensure text wraps if needed */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
 }
 
 /* Smaller Text */
