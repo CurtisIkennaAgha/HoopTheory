@@ -58,7 +58,7 @@ h1, h2, h3 {
   z-index: 100; /* Bring the text to the front */
   position: relative; /* Ensure z-index works */
   white-space: normal; /* Ensure text wraps if needed */
-  margin-top: 300px;
+  margin-top: 0;
 }
 
 .testimonials-subtitle {
