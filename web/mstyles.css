@@ -47,6 +47,7 @@ h1, h2, h3 {
 }
 
 .testimonials-title {
+  margin: 0px;
   -webkit-font-smoothing: antialiased; 
   text-align: center;
   color: rgb(255, 255, 255); /* Temporary debug color */
