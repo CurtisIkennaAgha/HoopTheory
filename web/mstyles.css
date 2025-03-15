@@ -494,7 +494,7 @@ body {
 
 /* Make all H2s in the section bigger */
 .image-section h2, .single-image-section h2 {
-  font-size: 0.8rem; /* Increased size for all H2s in the section */
+  font-size: 0.5rem; /* Increased size for all H2s in the section */
   color: white;
   margin-bottom: 4px;
 }
