@@ -29,7 +29,6 @@ h1, h2, h3 {
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  padding: 2rem 5rem; /* Padding to prevent clipping */
   background-color: #000000;
   box-sizing: border-box;
   flex-wrap: wrap; /* Allow content to wrap on smaller screens */
@@ -64,6 +63,7 @@ h1, h2, h3 {
 .testimonials-subtitle {
   font-size: 1.2rem;
   font-family: 'PT Serif', serif;
+  margin: 0px;
 }
 
 
