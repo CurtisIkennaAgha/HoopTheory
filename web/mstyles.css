@@ -284,7 +284,6 @@ body {
   gap: 20px; /* Space between the two sections */
   flex-wrap: wrap; /* Ensures responsiveness */
   padding: 40px 20px;
-  margin-bottom: 70px;
 }
 
 .dual-frame {
