@@ -47,6 +47,7 @@ h1, h2, h3 {
 
 .testimonials-title {
   margin-top: 50px;
+  margin-bottom: 0px;
   -webkit-font-smoothing: antialiased; 
   text-align: center;
   color: rgb(255, 255, 255); /* Temporary debug color */
@@ -54,7 +55,6 @@ h1, h2, h3 {
   display: block; /* Temporarily disable flexbox */
   font-size: 2.6rem;
   font-family: 'Florida Project One', sans-serif;
-  line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
   position: relative; /* Ensure z-index works */
   white-space: normal; /* Ensure text wraps if needed */
@@ -88,6 +88,7 @@ h1, h2, h3 {
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   margin: 0;
+  font-size: 0.3rem;
 }
 
 .curved-image {
