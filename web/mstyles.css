@@ -47,8 +47,6 @@ h1, h2, h3 {
 }
 
 .testimonials-title {
-  margin: 8px;
-  margin-top: 80px;
   -webkit-font-smoothing: antialiased; 
   text-align: center;
   color: rgb(255, 255, 255); /* Temporary debug color */
@@ -60,14 +58,12 @@ h1, h2, h3 {
   z-index: 100; /* Bring the text to the front */
   position: relative; /* Ensure z-index works */
   white-space: normal; /* Ensure text wraps if needed */
+  margin-top: 300px;
 }
 
 .testimonials-subtitle {
   font-size: 1.2rem;
   font-family: 'PT Serif', serif;
-  margin-top: 0rem;
-  margin-left: 0px;
-  margin-bottom: 5px;
 }
 
 
