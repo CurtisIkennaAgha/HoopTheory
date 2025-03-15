@@ -33,7 +33,6 @@ h1, h2, h3 {
   background-color: #000000;
   box-sizing: border-box;
   flex-wrap: wrap; /* Allow content to wrap on smaller screens */
-  
 }
 
 .testimonials-section {
@@ -110,7 +109,6 @@ h1, h2, h3 {
   align-items: center;
   position: relative;
   border-radius: 15px;
-  margin-bottom: 70px;
 }
 
 .curved-image img, iframe{
