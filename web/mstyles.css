@@ -61,14 +61,15 @@ h1, h2, h3 {
   white-space: normal; /* Ensure text wraps if needed */
   margin: 0; /* Reset margins */
   padding: 0; /* Reset padding */
+  padding-top: 20px;
 }
 
 .testimonials-subtitle {
   font-size: 1.2rem;
   font-family: 'PT Serif', serif;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   margin-left: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 
@@ -84,14 +85,12 @@ h1, h2, h3 {
 }
 
 .text-content h1 {
-  font-size: 6rem; /* Larger font size for visibility */
   font-family: 'PT Serif', serif;
   line-height: 1.2;
   margin: 0;
 }
 
 .text-content h2 {
-  font-size: 6rem; /* Larger font size for visibility */
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   margin: 0;
