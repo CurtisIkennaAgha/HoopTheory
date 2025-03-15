@@ -108,6 +108,7 @@ h1, h2, h3 {
   align-items: center;
   position: relative;
   border-radius: 15px;
+  margin-bottom: 70px;
 }
 
 .curved-image img, iframe{
