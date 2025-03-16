@@ -88,7 +88,6 @@ h1, h2, h3 {
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   margin: 2px;
-  font-size: 0.3rem;
 }
 
 .curved-image {
@@ -419,7 +418,7 @@ body {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -437,7 +436,7 @@ body {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size: 1.4rem;
+  font-size: 0.2rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -495,7 +494,7 @@ body {
 
 /* Make all H2s in the section bigger */
 .image-section h2, .single-image-section h2 {
-  font-size: 2rem; /* Increased size for all H2s in the section */
+  font-size:1rem;
   color: white;
   margin-bottom: 4px;
 }
