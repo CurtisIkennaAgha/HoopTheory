@@ -263,14 +263,15 @@ body {
   top: 0;
   left: 0; /* Keep it at 0 so translateX works correctly */
   width: 250px;
-  height: 100%;
+  height: 100vh;
   background: #000000;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   padding-top: 20px;
   box-sizing: border-box; /* Prevent extra width issues */
   overflow-x: hidden; /* Hide anything overflowing */
-  overflow-y: visible;
+  box-sizing: border-box;
+  overflow-y: auto; /* Allows scrolling if content overflows */
 }
 
 .sidebar-open {
