@@ -87,7 +87,7 @@ h1, h2, h3 {
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.3rem;
 }
 
 .curved-image {
@@ -418,7 +418,7 @@ body {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size:1.5rem;
+  font-size: 0.4rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -436,7 +436,7 @@ body {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size: 1.5rem;
+  font-size: 0.4rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -485,7 +485,6 @@ body {
   align-items: center;
   width: 100%;
   margin-top: 3rem;
-  margin:5px;
 }
 
 .single-image-box {
@@ -495,7 +494,7 @@ body {
 
 /* Make all H2s in the section bigger */
 .image-section h2, .single-image-section h2 {
-  font-size: 1.3rem; /* Increased size for all H2s in the section */
+  font-size: 2rem; /* Increased size for all H2s in the section */
   color: white;
   margin-bottom: 4px;
 }
@@ -587,6 +586,10 @@ body {
   .content-section {
     flex-direction: column; /* Stack text and video on mobile */
     padding: 2rem; /* Less padding for mobile */
+  }
+
+  .text-content h1, .text-content h2 {
+    font-size: 3rem; /* Adjust font size for mobile */
   }
 
   .curved-image {
