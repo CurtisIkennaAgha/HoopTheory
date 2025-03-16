@@ -589,10 +589,6 @@ body {
     padding: 2rem; /* Less padding for mobile */
   }
 
-  .text-content h1, .text-content h2 {
-    font-size: 3rem; /* Adjust font size for mobile */
-  }
-
   .curved-image {
     max-width: 100%; /* Make video container take full width on smaller screens */
     height: auto;
