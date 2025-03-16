@@ -418,7 +418,7 @@ body {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size:1.5rem;
+  font-size:1.4rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -436,7 +436,7 @@ body {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -495,7 +495,7 @@ body {
 
 /* Make all H2s in the section bigger */
 .image-section h2, .single-image-section h2 {
-  font-size: 1.3rem; /* Increased size for all H2s in the section */
+  font-size: 1.4rem; /* Increased size for all H2s in the section */
   color: white;
   margin-bottom: 4px;
 }
@@ -580,18 +580,5 @@ body {
 
   .hamburger {
     display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .content-section {
-    flex-direction: column; /* Stack text and video on mobile */
-    padding: 2rem; /* Less padding for mobile */
-  }
-
-  .curved-image {
-    max-width: 100%; /* Make video container take full width on smaller screens */
-    height: auto;
-    margin-top: 2rem; /* Add space between text and video */
   }
 }
