@@ -262,6 +262,7 @@ body {
   position: fixed;
   top: 0;
   left: 0; /* Keep it at 0 so translateX works correctly */
+  bottom:0;
   width: 250px;
   height: 100vh;
   background: #000000;
