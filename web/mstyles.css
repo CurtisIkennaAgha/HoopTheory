@@ -52,7 +52,7 @@ h1, h2, h3 {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size: 2.6rem;
+  font-size: 2.45em;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
@@ -81,12 +81,13 @@ h1, h2, h3 {
 .text-content h1 {
   font-family: 'PT Serif', serif;
   line-height: 1.2;
+  margin:2px;
 }
 
 .text-content h2 {
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
-  margin: 0;
+  margin: 2px;
   font-size: 0.3rem;
 }
 
@@ -589,7 +590,7 @@ body {
   }
 
   .text-content h1, .text-content h2 {
-    font-size: 3rem; /* Adjust font size for mobile */
+    font-size: 1.5rem; /* Adjust font size for mobile */
   }
 
   .curved-image {
