@@ -268,7 +268,7 @@ body {
   background-color: #ffffff !important; /* Ensure solid black background */
   color: white;
   padding: 16px;
-  transform: translateX(-250%);
+  transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1000; /* Ensure it stays on top */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better visibility */
