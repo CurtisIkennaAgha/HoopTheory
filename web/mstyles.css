@@ -260,11 +260,10 @@ body {
 
 .sidebar {
   position: fixed;
-  top: 0;
   left: 0; /* Keep it at 0 so translateX works correctly */
   width: 250px;
   height: 100%;
-  background: #333;
+  background: #000000;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   padding-top: 20px;
