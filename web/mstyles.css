@@ -78,6 +78,15 @@ h1, h2, h3 {
   text-align: center; /* Horizontally centers text within its container */
 }
 
+.text-contents {
+  color: beige;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text */
+  text-align: center; /* Horizontally centers text within its container */
+}
+
 .text-content h1 {
   font-family: 'PT Serif', serif;
   line-height: 1.2;
@@ -89,6 +98,21 @@ h1, h2, h3 {
   line-height: 1.2;
   margin: 2px;
 }
+
+.text-contents h1 {
+  font-family: 'PT Serif', serif;
+  line-height: 1.2;
+  margin-bottom: 7px;
+  font-size: 2.5rem
+}
+
+.text-contents h2{
+  font-family: 'Florida Project One', sans-serif;
+  line-height: 1.2;
+  margin: 2px;
+  font-size: 2.5rem;
+}
+
 
 .curved-image {
   flex: 1;
