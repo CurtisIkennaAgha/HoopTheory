@@ -525,8 +525,7 @@ body {
 
 
 .single-image-box img {
-  width: 115%;
-  max-width: 900px;
+  width: 200px;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
@@ -550,9 +549,6 @@ body {
     height: 250px;
   }
 
-  .single-image-box img {
-    width: 80%;
-  }
 }
 
 /* Mobile view: stack images */
