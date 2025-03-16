@@ -262,7 +262,7 @@ body {
   position: fixed;
   top: 0;
   left: -100%;
-  width: 70px;
+  width: 100px;
   height: 100%;
   background-color: #000000 !important; /* Ensure solid black background */
   color: white;
