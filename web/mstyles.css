@@ -9,6 +9,10 @@
     font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -259,6 +263,8 @@ body {
 }
 
 .sidebar {
+  font-family: 'Florida Project One', sans-serif;
+  font-weight: 400;
   position: fixed;
   top: 0;
   left: -100%;
