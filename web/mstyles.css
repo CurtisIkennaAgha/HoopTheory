@@ -52,7 +52,7 @@ h1, h2, h3 {
   color: rgb(255, 255, 255); /* Temporary debug color */
   flex: 1;
   display: block; /* Temporarily disable flexbox */
-  font-size: 2.2rem
+  font-size: 2.2rem;
   font-family: 'Florida Project One', sans-serif;
   line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
