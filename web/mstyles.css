@@ -289,6 +289,7 @@ body {
 .sidebar-links{
   font-family: 'Florida Project One', sans-serif;
   font-weight: 400;
+  gap: 20px;
 
 }
 
