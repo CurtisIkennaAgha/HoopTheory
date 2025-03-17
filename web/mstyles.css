@@ -263,8 +263,6 @@ body {
 }
 
 .sidebar {
-  font-family: 'Florida Project One', sans-serif;
-  font-weight: 400;
   position: fixed;
   top: 0;
   left: -100%;
@@ -283,6 +281,12 @@ body {
 .sidebar-open {
   left:0;
   transition: left 1.5 ease-in-out;
+}
+
+.sidebar-links{
+  font-family: 'Florida Project One', sans-serif;
+  font-weight: 400;
+
 }
 
 .close-button {
