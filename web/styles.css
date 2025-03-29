@@ -94,6 +94,17 @@ h1, h2, h3 {
 
 
 
+
+.text-contents {
+  color: beige;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text */
+  text-align: center; /* Horizontally centers text within its container */
+  padding-right: 2rem; /* Adds spacing between the text and the video */
+}
+
 .text-content {
   color: beige;
   flex: 1;
