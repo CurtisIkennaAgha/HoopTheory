@@ -99,13 +99,11 @@ h1, h2, h3 {
 
 .text-content h1 {
   font-family: 'PT Serif', serif;
-  line-height: 1.2;
   margin-bottom: 7px;
 }
 
 .text-content h2 {
   font-family: 'Florida Project One', sans-serif;
-  line-height: 1.2;
   margin: 2px;
 }
 
