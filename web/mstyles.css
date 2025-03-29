@@ -14,6 +14,11 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
+section{
+  background-color: rgba(0, 0, 0, 0.5); /* Darken using a semi-transparent black */
+  background-blend-mode: multiply; /* Blends the color with the image */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -204,6 +209,8 @@ body {
   background-size: cover;
   background-position: center;
   height: 100%;
+  background-position: 35% 50%; /* 20% from the left, 50% from the top */
+
 }
 
 .hero-overlay {
@@ -529,6 +536,7 @@ body {
 
 .single-image-box {
   text-align: center;
+  width: 800%;
 }
 
 
@@ -541,7 +549,7 @@ body {
 
 
 .single-image-box img {
-  width: 200px;
+  width: 80vw;
   height: auto;
   object-fit: cover;
   border-radius: 20px;

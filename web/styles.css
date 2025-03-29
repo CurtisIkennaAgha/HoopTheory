@@ -13,6 +13,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+section{
+  background-color: rgba(0, 0, 0, 0.5); /* Darken using a semi-transparent black */
+  background-blend-mode: multiply; /* Blends the color with the image */
+}
+
 /* Responsive font sizes using clamp() */
 section p {
   font-size: clamp(0.875rem, 2vw + 1rem, 1.25rem); /* Minimum, preferred, and maximum font size */
@@ -115,17 +125,15 @@ h1, h2, h3 {
   padding-right: 2rem; /* Adds spacing between the text and the video */
 }
 
-.text-content h1 {
-  font-size: 6rem; /* Larger font size for visibility */
+.text-contents h1 {
+  font-size: 7.3rem; /* Larger font size for visibility */
   font-family: 'PT Serif', serif;
-  line-height: 1.2;
   margin: 0;
 }
 
-.text-content h2 {
-  font-size: 6rem; /* Larger font size for visibility */
+.text-contents h2 {
+  font-size: 7.3rem; /* Larger font size for visibility */
   font-family: 'Florida Project One', sans-serif;
-  line-height: 1.2;
   margin: 0;
 }
 
@@ -138,7 +146,6 @@ h1, h2, h3 {
   border: 8px solid white; /* White stroke for emphasis */
   box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
   border-radius: 15px;
@@ -524,9 +531,6 @@ body {
     height: 250px;
   }
 
-  .single-image-box img {
-    width: 80%;
-  }
 }
 
 /* Mobile view: stack images */
