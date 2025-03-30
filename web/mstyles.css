@@ -444,13 +444,15 @@ body {
   display: block; /* Temporarily disable flexbox */
   font-size: 1.4rem;
   font-family: 'Florida Project One', sans-serif;
-  line-height: 1.2;
   z-index: 100; /* Bring the text to the front */
   position: relative; /* Ensure z-index works */
   white-space: normal; /* Ensure text wraps if needed */
   margin: 0; /* Reset margins */
   padding: 0; /* Reset padding */
-  margin-top: 30px;
+  margin-top: 0px;
+  overflow: visible;
+  box-sizing: border-box;
+
 }
 
 /* Updated H2 */
