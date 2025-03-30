@@ -25,6 +25,9 @@ section{
 
 /* Apply the fonts to different elements */
 h1, h2, h3 {
+  margin: 0;
+  padding: 10px 0; /* Adjust font size for mobile */
+  line-height: 1.2; 
   font-family: 'Florida Project One', sans-serif;
 }
 
