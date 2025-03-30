@@ -449,10 +449,7 @@ body {
   white-space: normal; /* Ensure text wraps if needed */
   margin: 0; /* Reset margins */
   padding: 0; /* Reset padding */
-  margin-top: 0px;
-  overflow: visible;
-  box-sizing: border-box;
-
+  margin-top: 30px;
 }
 
 /* Updated H2 */
