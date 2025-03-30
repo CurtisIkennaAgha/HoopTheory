@@ -640,3 +640,39 @@ button, input {
     display: none;
   }
 }
+
+#subscribe {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000; /* Higher than other elements */
+  background-color: rgba(52, 52, 52, 0.95); /* Slight transparency */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.5s ease; /* Smooth fade-in/out */
+  pointer-events: auto; /* Enable interaction */
+}
+
+body.modal-active {
+  overflow: hidden; /* Prevent scrolling when modal is active */
+}
+
+body.modal-active .content,
+body.modal-active header,
+body.modal-active footer {
+  opacity: 0.2; /* Dim the background content */
+  pointer-events: none; /* Disable interaction with background content */
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+#subscribe * {
+  pointer-events: auto; /* Ensure all child elements inside #subscribe are interactive */
+}
+
+#subscribe iframe {
+  pointer-events: auto; /* Ensure Stripe iframe is interactive */
+}

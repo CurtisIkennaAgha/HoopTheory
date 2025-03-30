@@ -96,36 +96,35 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.add-drill').addEventListener('click', function() {
         const subscribeDiv = document.getElementById('subscribe');
         
-        // Check if the element exists before modifying its style
         if (subscribeDiv) {
-            // Make the container visible and fade in
             subscribeDiv.style.display = 'flex'; // Show the container
             setTimeout(function() {
                 subscribeDiv.style.opacity = 1; // Fade in
-            }, 10); // Delay to ensure display is updated before opacity changes
+                document.body.classList.add('modal-active'); // Dim background
+            }, 10);
         }
     });
 
     // Close button functionality
-    document.querySelector('.close').addEventListener('click', function() {
+    document.querySelector('#subscribe .close').addEventListener('click', function() {
         const subscribeDiv = document.getElementById('subscribe');
         
-        // Check if the element exists before modifying its style
         if (subscribeDiv) {
-            // Fade out and then hide the container
             subscribeDiv.style.opacity = 0; // Fade out
             setTimeout(function() {
                 subscribeDiv.style.display = 'none'; // Hide after fade
-            }, 500); // Wait for the fade effect to complete before hiding
+                document.body.classList.remove('modal-active'); // Restore background
+            }, 500);
         }
     });
+
+    // Allow interaction with the Stripe iframe
+    const stripeIframe = document.querySelector('#subscribe iframe');
+    if (stripeIframe) {
+        stripeIframe.style.pointerEvents = 'auto'; // Ensure iframe is interactive
+    }
 });
-
-
-
-
-
-  </script>
+</script>
 </head>
 
 <body>
