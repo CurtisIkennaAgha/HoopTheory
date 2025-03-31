@@ -411,6 +411,7 @@ button.close:hover {
   padding: 2rem;
   display: flex; /* Make the form a flex container */
   flex-wrap: wrap; /* Wrap form inputs to new lines if needed */
+  gap: 0px; /* Add spacing between form elements */
 }
 .form header{
   display: none; /* Make the form a flex container */
@@ -420,15 +421,18 @@ button.close:hover {
   text-align: center;
 }
  .form input{
+  margin: 0; /* Remove any margin around input fields */
+  padding: 0 15px; /* Keep horizontal padding only */
   display: flex; /* Make the form a flex container */
   flex-wrap: wrap; /* Wrap form inputs to new lines if needed */
    height: 50px;
    width: 100%;
-   padding: 0 15px;
    font-size: 17px;
-   margin-bottom: 10px;
+   margin-top: 20px; /* Add consistent spacing above the email form */
+   margin-bottom: 5px; /* Add a small gap below the input fields */
    border-radius: 15px;
    outline: none;
+   font-weight: 500; /* Make input text slightly bolder */
  }
  .form input:focus{
    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
@@ -437,8 +441,8 @@ button.close:hover {
   padding-top: 10px;
   color: #fff;
   background: #cf8104;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.5rem; /* Increase font size */
+  font-weight: 800; /* Make text bolder */
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.4s;
@@ -449,13 +453,22 @@ button.close:hover {
 .signup{
   font-size: 17px;
   text-align: center;
+  margin-top: 20px; /* Match the spacing with the email form */
+  margin-bottom: 20px; /* Ensure consistent spacing below */
 }
 .signup a{
   color: #cf8104;
   cursor: pointer;
+  font-weight: 600; /* Make the link text slightly bolder */
 }
 .signup a:hover{
   text-decoration: underline;
+}
+
+.error-message {
+  margin-top: 0; /* Ensure no space above the error messages */
+  margin-bottom: 10px; /* Keep space below the error messages */
+  padding: 0; /* Remove any padding */
 }
 
 .intro-content {

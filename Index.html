@@ -3,236 +3,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hoop Theory</title>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
- <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
- <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
- <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-<script>
-window.addEventListener("load", function() {
-  console.log("Login form display:", document.querySelector('.login.form').style.display);
-  console.log("Signup form display:", document.querySelector('.registration.form').style.display);
-  console.log("Forgot form display:", document.querySelector('.forgot.form').style.display);
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
+  <!-- Page Initialization -->
+  <script>
+    window.addEventListener("load", function() {
+      console.log("Login form display:", document.querySelector('.login.form').style.display);
+      console.log("Signup form display:", document.querySelector('.registration.form').style.display);
+      console.log("Forgot form display:", document.querySelector('.forgot.form').style.display);
 
-    const loginForm = document.querySelector('.login.form');
-    const signupForm = document.querySelector('.registration.form');
-    const forgotForm = document.querySelector('.forgot.form');
+      const loginForm = document.querySelector('.login.form');
+      const signupForm = document.querySelector('.registration.form');
+      const forgotForm = document.querySelector('.forgot.form');
 
-    console.log("Login form computed display:", getComputedStyle(loginForm).display);
-    console.log("Signup form computed display:", getComputedStyle(signupForm).display);
-    console.log("Forgot form computed display:", getComputedStyle(forgotForm).display);
+      console.log("Login form computed display:", getComputedStyle(loginForm).display);
+      console.log("Signup form computed display:", getComputedStyle(signupForm).display);
+      console.log("Forgot form computed display:", getComputedStyle(forgotForm).display);
 
-  const preloaderDuration = 500; // Duration of preloader visibility
-  const preloader = document.getElementById('preloader');
-  const header = document.querySelector('header');
-  const navbar = document.querySelector('footer');
-  const content = document.querySelector('.content');
+      const preloaderDuration = 500; // Duration of preloader visibility
+      const preloader = document.getElementById('preloader');
+      const header = document.querySelector('header');
+      const navbar = document.querySelector('footer');
+      const content = document.querySelector('.content');
 
-  // Initially set opacity to 0 for header, navbar, and content to make them invisible
-  header.style.opacity = '0';
-  navbar.style.opacity = '0';
-  content.style.opacity = '0';
+      // Initially set opacity to 0 for header, navbar, and content to make them invisible
+      header.style.opacity = '0';
+      navbar.style.opacity = '0';
+      content.style.opacity = '0';
 
-  // Show the preloader for the specified duration
-  setTimeout(function() {
-    preloader.style.opacity = '0'; // Start fading out the preloader
-
-    // After fade-out completes, hide the preloader and reveal the header, navbar, and content
-    setTimeout(function() {
-      preloader.style.display = 'none'; // Hide the preloader
-
-      // Use opacity transition to fade in header, navbar, and content
-      header.style.display = 'flex';   // Set to flex to match the layout
-      navbar.style.display = 'flex';   // Make sure navbar is set to flex (or block if needed)
-      content.style.display = 'block'; // Content is set to block or flex as needed
-
-      // Trigger the fade-in effect by adding transition
+      // Show the preloader for the specified duration
       setTimeout(function() {
-        header.style.transition = 'opacity 1s ease';
-        navbar.style.transition = 'opacity 1s ease';
-        content.style.transition = 'opacity 1s ease';
+        preloader.style.opacity = '0'; // Start fading out the preloader
 
-        header.style.opacity = '1';
-        navbar.style.opacity = '1';
-        
-        // Delay the content fade-in by 0.5 seconds
+        // After fade-out completes, hide the preloader and reveal the header, navbar, and content
         setTimeout(function() {
-          content.style.opacity = '1';
-        }, 500); // Delay content fade-in by half a second (500ms)
-      }, 100); // Delay before applying transition
-    }, 1000); // Match this time with the fade-out duration
-  }, preloaderDuration); // Show the preloader for the specified duration
-});
+          preloader.style.display = 'none'; // Hide the preloader
 
-window.onscroll = function() {
-  shrinkHeader();
-};
+          // Use opacity transition to fade in header, navbar, and content
+          header.style.display = 'flex';   // Set to flex to match the layout
+          navbar.style.display = 'flex';   // Make sure navbar is set to flex (or block if needed)
+          content.style.display = 'block'; // Content is set to block or flex as needed
 
-function shrinkHeader() {
-  const header = document.querySelector('header');
-  
-  // Once you've scrolled past 100px, shrink the header
-  if (window.scrollY > 100) {
-    header.classList.add('shrink'); // Add the shrink class
-  } else {
-    header.classList.remove('shrink'); // Remove the shrink class
-  }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    // Add drill button click functionality
-    document.querySelector('.add-drill').addEventListener('click', function() {
-        const subscribeDiv = document.getElementById('subscribe');
-        
-        if (subscribeDiv) {
-            subscribeDiv.style.display = 'flex'; // Show the container
+          // Trigger the fade-in effect by adding transition
+          setTimeout(function() {
+            header.style.transition = 'opacity 1s ease';
+            navbar.style.transition = 'opacity 1s ease';
+            content.style.transition = 'opacity 1s ease';
+
+            header.style.opacity = '1';
+            navbar.style.opacity = '1';
+
+            // Delay the content fade-in by 0.5 seconds
             setTimeout(function() {
-                subscribeDiv.style.opacity = 1; // Fade in
-                document.body.classList.add('modal-active'); // Dim background
-            }, 10);
-        }
+              content.style.opacity = '1';
+            }, 500); // Delay content fade-in by half a second (500ms)
+          }, 100); // Delay before applying transition
+        }, 1000); // Match this time with the fade-out duration
+      }, preloaderDuration); // Show the preloader for the specified duration
     });
 
-    // Close button functionality
-    document.querySelector('#subscribe .close').addEventListener('click', function() {
-        const subscribeDiv = document.getElementById('subscribe');
-        
-        if (subscribeDiv) {
-            subscribeDiv.style.opacity = 0; // Fade out
-            setTimeout(function() {
-                subscribeDiv.style.display = 'none'; // Hide after fade
-                document.body.classList.remove('modal-active'); // Restore background
-            }, 500);
-        }
-    });
+    window.onscroll = function() {
+      shrinkHeader();
+    };
 
-    // Allow interaction with the Stripe iframe
-    const stripeIframe = document.querySelector('#subscribe iframe');
-    if (stripeIframe) {
-        stripeIframe.style.pointerEvents = 'auto'; // Ensure iframe is interactive
+    function shrinkHeader() {
+      const header = document.querySelector('header');
+
+      // Once you've scrolled past 100px, shrink the header
+      if (window.scrollY > 100) {
+        header.classList.add('shrink'); // Add the shrink class
+      } else {
+        header.classList.remove('shrink'); // Remove the shrink class
+      }
     }
-});
-</script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add drill button click functionality
+      document.querySelector('.add-drill').addEventListener('click', function() {
+        const subscribeDiv = document.getElementById('subscribe');
+
+        if (subscribeDiv) {
+          subscribeDiv.style.display = 'flex'; // Show the container
+          setTimeout(function() {
+            subscribeDiv.style.opacity = 1; // Fade in
+            document.body.classList.add('modal-active'); // Dim background
+          }, 10);
+        }
+      });
+
+      // Close button functionality
+      document.querySelector('#subscribe .close').addEventListener('click', function() {
+        const subscribeDiv = document.getElementById('subscribe');
+
+        if (subscribeDiv) {
+          subscribeDiv.style.opacity = 0; // Fade out
+          setTimeout(function() {
+            subscribeDiv.style.display = 'none'; // Hide after fade
+            document.body.classList.remove('modal-active'); // Restore background
+          }, 500);
+        }
+      });
+
+      // Allow interaction with the Stripe iframe
+      const stripeIframe = document.querySelector('#subscribe iframe');
+      if (stripeIframe) {
+        stripeIframe.style.pointerEvents = 'auto'; // Ensure iframe is interactive
+      }
+    });
+  </script>
 </head>
-
 <body>
-
+  <!-- Preloader -->
   <div id="preloader">
     <div class="intro-content">
       <img src="assets/LOGO.png" alt="Logo" class="logo">
     </div>
   </div>
 
+  <!-- Header -->
   <header>
     <div class="hlogo"><img src="assets/hlogo.png" alt=""></div>
   </header>
 
+  <!-- Main Content -->
   <div class="content">
-  <div class="container" id = "logincontainer">
-    <input type="checkbox" id="check">
-    <div class="login form">
-      <form action="#">
-        <input type="text" id='inUsr' placeholder="Enter your email">
-        <input type="password" id="inPass" placeholder="Enter your password">
-        <span class="signup">
-          <a href="#" id="forgotLabel">Forgot password?</a>
-        </span>
-        <input type="button" class="button loginbtn" value="Login">
-      </form>
-      <div class="signup">
-        <span class="signup">Don't have an account?
-          <a href="#" id="signupLabel">Signup</a>
-        </span>
-      </div>
-    </div>
-    <div class="registration form">
-      <header>Signup</header>
-      <form action="#">
-        <input type="text" id="name" placeholder="Enter your name">
-        <input type="text" id='username' placeholder="Enter your username">
-        <input type="text" id='email' placeholder="Enter your email">
-        <input type="password" id='password' placeholder="Create a password">
-        <input type="button" class="button signupbtn" value="Signup">
-      </form>
-      <div class="signup">
-        <span class="signup">Already have an account?
-          <a href="#" id="loginLabel">Login</a>
-        </span>
-      </div>
-    </div>
-    <div class="forgot form" >
-      <header>Forgoot Password</header>
-      <form action="#">
-        <input type="text" id='forgotinp' placeholder="Enter your email">
-        <input type="button" class="button forgotbtn" value="Submit">
-      </form>
-      <div class="signup">
-        <span class="signup">Don't have an account?
-          <a href="#" id="signupLabel">Signup</a>
-        </span>
-      </div>
-      <div class="signup">
-        <span class="signup">Already have an account?
-          <a href="#" id="loginLabel">Login</a>
-        </span>
-      </div>
-    </div>
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-<script src="page0.js" type="module"></script>
-
-    <div class = "containerd" id="subscribe">
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-        <stripe-buy-button
-  buy-button-id="buy_btn_1QjrXKK3gHpSelWRhwOVKNbk"
-  publishable-key="pk_live_51NQzBiK3gHpSelWRjnlomVeIGGmAmnVnyMVMvO332tFmeCv65dj5IJgeXT3NIxi3cBcSKkUiv1jzNLmtCmelYHyD00W2mnYeU5"
->
-        </stripe-buy-button>
-        <button class="close">
-            <div class="plus-icon"><img src = "assets/close.png"></div>
-        </button>
-     </div>
-    
-      <div class = "pretext"></div>
-      <div class="container" >
-        <div class ="drill-container">
-          <div class = "drill" id = "daily-drill"><img src = "assets/drill.gif"></img></div>
-          <div class="overlay-text">Drill Name</div>
-          <button class="add-drill"><div class="plus-icon"><img src = "assets/plus.png"></div></button>
+    <!-- Login Container -->
+    <div class="container" id="logincontainer">
+      <input type="checkbox" id="check">
+      <div class="login form">
+        <form action="#" id="loginForm">
+          <!-- Email Input -->
+          <div>
+            <input type="text" id="inUsr" placeholder="Enter your email">
+            <span class="error-message" id="emailError" style="color: red; font-size: 1rem; font-weight: bold; display: none;"></span>
+          </div>
+          <!-- Password Input -->
+          <div>
+            <input type="password" id="inPass" placeholder="Enter your password">
+            <span class="error-message" id="passwordError" style="color: red; font-size: 1rem; font-weight: bold; display: none;"></span>
+          </div>
+          <span class="signup">
+            <a href="#" id="forgotLabel">Forgot password?</a>
+          </span>
+          <input type="button" class="button loginbtn" value="Login">
+        </form>
+        <div class="signup">
+          <span class="signup">Don't have an account?
+            <a href="#" id="signupLabel">Signup</a>
+          </span>
         </div>
       </div>
-      <div class = "pretext"></div>
-      <div class="socials-container">
-        <ul class="socials-links">
-          <li><a href="https://www.instagram.com/hoop.theory/"><img src = "assets/insta.png"></img></a></li>
-          <li><a href="#"><img src = "assets/tiktok.png"></img></a></li>
-          <li><a href="#"><img src = "assets/facebook.png"></img></a></li>
-        </ul>
-      </div>
-      <a href="web/Index.html">web</a>
 
+      <!-- Registration Form -->
+      <div class="registration form">
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" id="name" placeholder="Enter your name">
+          <input type="text" id='username' placeholder="Enter your username">
+          <input type="text" id='email' placeholder="Enter your email">
+          <input type="password" id='password' placeholder="Create a password">
+          <input type="button" class="button signupbtn" value="Signup">
+        </form>
+        <div class="signup">
+          <span class="signup">Already have an account?
+            <a href="#" id="loginLabel">Login</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Forgot Password Form -->
+      <div class="forgot form">
+        <header>Forgoot Password</header>
+        <form action="#">
+          <input type="text" id='forgotinp' placeholder="Enter your email">
+          <input type="button" class="button forgotbtn" value="Submit">
+        </form>
+        <div class="signup">
+          <span class="signup">Don't have an account?
+            <a href="#" id="signupLabel">Signup</a>
+          </span>
+        </div>
+        <div class="signup">
+          <span class="signup">Already have an account?
+            <a href="#" id="loginLabel">Login</a>
+          </span>
+        </div>
+      </div>
     </div>
-    <footer>
-      <ul class="nav-links">
-        <li class="active"><a href="Index.html"><img src = "assets/home.png"></img></a></li>
-        <li><a href="Drills.html"><img src = "assets/drills.png"></img></a></li>
-        <li><a href="#"><img src = "assets/booking.png"></img></a></li>
-        <li><a href="#"> <img src = "assets/profile.png"></img></a></li>
+
+    <!-- Subscription Modal -->
+    <div class="containerd" id="subscribe">
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+      <stripe-buy-button
+        buy-button-id="buy_btn_1QjrXKK3gHpSelWRhwOVKNbk"
+        publishable-key="pk_live_51NQzBiK3gHpSelWRjnlomVeIGGmAmnVnyMVMvO332tFmeCv65dj5IJgeXT3NIxi3cBcSKkUiv1jzNLmtCmelYHyD00W2mnYeU5">
+      </stripe-buy-button>
+      <button class="close">
+        <div class="plus-icon"><img src="assets/close.png"></div>
+      </button>
+    </div>
+
+    <!-- Drill Section -->
+    <div class="container">
+      <div class="drill-container">
+        <div class="drill" id="daily-drill"><img src="assets/drill.gif"></div>
+        <div class="overlay-text">Drill Name</div>
+        <button class="add-drill"><div class="plus-icon"><img src="assets/plus.png"></div></button>
+      </div>
+    </div>
+
+    <!-- Socials Section -->
+    <div class="socials-container">
+      <ul class="socials-links">
+        <li><a href="https://www.instagram.com/hoop.theory/"><img src="assets/insta.png"></a></li>
+        <li><a href="#"><img src="assets/tiktok.png"></a></li>
+        <li><a href="#"><img src="assets/facebook.png"></a></li>
       </ul>
-    </footer>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <ul class="nav-links">
+      <li class="active"><a href="Index.html"><img src="assets/home.png"></a></li>
+      <li><a href="Drills.html"><img src="assets/drills.png"></a></li>
+      <li><a href="#"><img src="assets/booking.png"></a></li>
+      <li><a href="#"><img src="assets/profile.png"></a></li>
+    </ul>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="page0.js" type="module"></script>
+  <script>
+    document.querySelector('.loginbtn').addEventListener('click', function() {
+      const email = document.getElementById('inUsr').value;
+      const password = document.getElementById('inPass').value;
+      const emailErrorElement = document.getElementById('emailError');
+      const passwordErrorElement = document.getElementById('passwordError');
+
+      // Clear any existing error messages
+      emailErrorElement.style.display = "none";
+      passwordErrorElement.style.display = "none";
+
+      let hasError = false;
+
+      if (!email) {
+        emailErrorElement.textContent = "Email is required.";
+        emailErrorElement.style.display = "block";
+        hasError = true;
+      }
+
+      if (!password) {
+        passwordErrorElement.textContent = "Password is required.";
+        passwordErrorElement.style.display = "block";
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // Simulate login process (replace with actual authentication logic)
+      try {
+        const isLoginSuccessful = true; // Simulated success
+        if (!isLoginSuccessful) {
+          throw new Error("Invalid email or password. Please try again.");
+        }
+      } catch (error) {
+        if (error.message.includes("badly formatted")) {
+          emailErrorElement.textContent = "The email address is badly formatted.";
+          emailErrorElement.style.display = "block";
+        } else {
+          emailErrorElement.textContent = error.message;
+          emailErrorElement.style.display = "block";
+        }
+      }
+    });
+  </script>
 </body>
 </html>
