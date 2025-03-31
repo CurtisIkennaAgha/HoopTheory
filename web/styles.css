@@ -126,7 +126,7 @@ h1, h2, h3 {
 }
 
 .text-contents h1 {
-  font-size: 7.3rem; /* Larger font size for visibility */
+  font-size: clamp(4rem, 5vw + 2rem, 6rem); /* Adjusted to scale smaller */
   font-family: 'PT Serif', serif;
   margin: 0;
 }
@@ -548,39 +548,13 @@ body {
 }
 
 /* Make it responsive */
-@media (max-width: 900px) {
-  .dual-frame-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dual-frame {
-    width: 90%; /* Full width on smaller screens */
-    height: auto;
-    flex-direction: column; /* Stack image and text */
-  }
-
-  .dual-frame-image {
-    width: 100%;
-    height: 200px;
-  }
-
-  .dual-frame-text {
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-  }
-}
-
-
-
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
   }
 
   .hamburger {
-    display: none;
+    display: none; /* Hide mobile navbar on desktop */
   }
 }
 
@@ -599,4 +573,101 @@ body {
     height: auto;
     margin-top: 2rem; /* Add space between text and video */
   }
+}
+
+/* Adjustments for medium-sized screens (1024px to 1440px) */
+@media (max-width: 1440px) and (min-width: 1024px) {
+  section p {
+    font-size: clamp(0.8rem, 1.8vw + 0.9rem, 1.2rem);
+  }
+
+  section h1 {
+    font-size: clamp(1.8rem, 4.5vw + 1.8rem, 2.8rem);
+  }
+
+  section h2 {
+    font-size: clamp(1.6rem, 3.8vw + 1.4rem, 2.3rem);
+  }
+
+  section h3 {
+    font-size: clamp(1.4rem, 3vw + 0.9rem, 2rem);
+  }
+
+  .content-section {
+    padding: 1.5rem 4rem;
+  }
+
+  .dual-frame {
+    width: 48%;
+  }
+
+  .photo-link {
+    width: calc(28% - 1.5rem);
+  }
+}
+
+/* Adjustments for large screens (1440px and above) */
+@media (min-width: 1440px) {
+  section p {
+    font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  }
+
+  section h1 {
+    font-size: clamp(2.5rem, 6vw + 2rem, 3.5rem);
+  }
+
+  section h2 {
+    font-size: clamp(2rem, 5vw + 1.8rem, 3rem);
+  }
+
+  section h3 {
+    font-size: clamp(1.8rem, 4vw + 1.2rem, 2.5rem);
+  }
+
+  .content-section {
+    padding: 3rem 6rem;
+  }
+
+  .dual-frame {
+    width: 40%;
+  }
+
+  .photo-link {
+    width: calc(25% - 2rem);
+  }
+}
+
+/* Adjustments for smaller screens (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  section p {
+    font-size: clamp(0.75rem, 1.5vw + 0.8rem, 1.1rem);
+  }
+
+  section h1 {
+    font-size: clamp(1.6rem, 4vw + 1.6rem, 2.5rem);
+  }
+
+  section h2 {
+    font-size: clamp(1.4rem, 3.5vw + 1.2rem, 2rem);
+  }
+
+  section h3 {
+    font-size: clamp(1.2rem, 2.8vw + 0.8rem, 1.8rem);
+  }
+
+  .content-section {
+    padding: 1rem 3rem;
+  }
+
+  .dual-frame {
+    width: 90%;
+  }
+
+  .photo-link {
+    width: calc(40% - 1rem);
+  }
+}
+
+#mobile-menu, .mobile-menu {
+  display: none; /* Hide the mobile menu */
 }
